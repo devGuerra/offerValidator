@@ -10,29 +10,40 @@
     <script src="main.js"></script>
 </head>
 <body>
+    
     <div class="logo"></div>
 
     <div class="seletores">
+            <div>
+    
+                <select name="course" id="course" class="case"  onchange="selectCourse()"> <!-- Cria um seleção de opções, onchange chama a função se for quando for -->
+    
+                    <option class="selecioneCurso" value="">Product</option>
+                    <option value="brpt12">BR Private Teacher 12 PL's</option>
+                    <option value="brpt24">BR Private Teacher 24 PL's</option> <!-- Cria as opções com o valor especificado-->
+                    <option value="brpt48">BR Private Teacher 48 PL's</option>
+                    <option value="brpt100">BR Private Teacher 100 PL's</option>
+    
+                </select>
+            </div>
+            <div>
+                <select name="paymentMethod" id="paymentMethod" class="smallCase"  onchange="selectMethod()" > <!-- Cria um seleção de opções, onchange chama a função se for quando for -->
+                    <option value="">Payment Method</option>
+    
+                </select>
 
-        <select name="curso" id="curso" class="caixa"  onchange="changeSelect();"> <!-- Cria um seleção de opções, onchange chama a função se for quando for -->
-            <option class="selecioneCurso" value="">Selecione o Curso</option>
-            <option value="brpt12">BR PT 12 PL</option> <!-- Cria as opções com o valor especificado-->
-            <option value="brpt24">BR PT 24 PL</option>
-            <option value="brpt48">BR PT 48 PL</option>
-            <option value="brpt100">BR PT 100 PL</option>
-
-        </select>
-
-
-        <select name="pagamento" class="caixa" id="pagamento"  onchange="ofertaCurso();">
-            <option value="" >Selecione o Pagamento</option>
-
-        </select>
+                <select name="paymentSchedule" id="paymentSchedule" class="smallCase" onchange="ofertaCurso()">
+                    <!-- Cria um seleção de opções, onchange chama a função se for quando for -->
+    
+                    <option value="">Payment Schedule</option>
+                </select>
+           </div>
     </div>  
 
-    <div id="seletorBonus">
+
+    <div class="bonusOffer" id="seletorBonus">
         
-        <div id="bonusPL"></div>
+        <div id="bonusPL"></div>    
         <div id="bonusMonths"></div>
         <div id="bonusRescue"></div>
         <div id="multa10"></div>

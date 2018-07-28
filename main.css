@@ -1,5 +1,5 @@
 html{
-    background-color: white;
+    background-color: rgba(226, 226, 226, 0.397);
     font-size: 120%;
     height: 100%;
 }
@@ -8,68 +8,53 @@ html{
     background-repeat: no-repeat;
     background-position: center;
     height: 10em;
-
 }
 body{
 
     color: black;
     margin-left: 15%;
     margin-right: 15%;
-    padding-top: 10em;
+    padding-top: 1em;
     position: relative;
     height: 100%;
-    
 }
-.seletores{
+.seletores div{
+    display: table;
+    margin: 0 auto  
+}
 
-    padding-left: 25%
-}
-.seletores select{
+.seletores select {
+    
+    background-color: #f1e0e023;
     text-align-last: center;
-    margin: 0;
-    position: relative;
+    margin: 0.25em;
     border-radius: 1em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
 }
-.caixa {
-    background-color: white;
+.case {
     width: 50em;
     height: 5em;
     display: flex;
     margin: 10%;
 }
-.ofertasName{
-    display: inline-flex;
-    padding-left: 23.5%;
-    padding-right: 25%;
-
+.smallCase{
+    display: inline-block;
+    width: 24.75em;
+    height: 5em;
 }
-.ofertasName div{
+.bonusOffer{
+    display: table;
+    margin: 0 auto;
+}
+.bonusOffer div{
+    display: inline-block;
     margin: 1em;
-    max-width: 10em;
-    position: relative;
-    min-width: 10em;
-    border: 2px solid #fff;
-    text-align: center;
-    
-}
-.ofertas{
-    display: inline-flex;
-    padding-left: 23.5%;
-    padding-right: 25%;
-    height: 10em;
-    color: blueviolet;
+    font-family: 'Open Sans','Arimo','Roboto', sans-serif;
 }
 
-.ofertas div {
-    margin: 1em;
-    max-width: 10em;
-    position: relative;
-    min-width: 10em;
-    border: 1px solid gray;
-    border-radius: 1em;
-    text-align: center;
-}
+
+
+
 
     
 
