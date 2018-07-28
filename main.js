@@ -262,212 +262,247 @@ function selectMethod(){
 
 //  ***** Compara Curso e Pagamento (Mostra as Checkbox ) *****
 
-function ofertaCurso(){
+function offerCourse(){
 
     var course = document.getElementById("course").value;
     var paymentMethod = document.getElementById("paymentMethod").value;
     var paymentSchedule = document.getElementById("paymentSchedule").value;
 
     var saleCourse = course +"_"+ paymentMethod +"_"+ paymentSchedule;
-    clear()
+    clear();
+
     switch(saleCourse){
         case "brpt12_creditCard_Automatic":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
 
     break
         case "brpt12_creditCard_Manual":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
     break
         case "brpt12_creditCard_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
     break
         case "brpt12_creditCard_semiAutomatic":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
     break
         case "brpt12_boleto_Manual":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
     break
         case "brpt12_boleto_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
     break
         case "brpt12_bankTransfer_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
     break
         case "brpt12_paypalPagsguro_Automatic":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
     break
         case "brpt12_paypalPagsguro_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
         // aqui terminar o ciclo de condições
     break
         case "brpt24_creditCard_Automatic":
 
-        baseOfertas();
+        offersBase();
+        offer10();
  
     break
         case "brpt24_creditCard_Manual":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
     break
         case "brpt24_creditCard_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
     break
         case "brpt24_creditCard_semiAutomatic":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
   
     break
         case "brpt24_boleto_Manual":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
   
     break
         case "brpt24_boleto_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
 
  
     break
         case "brpt24_bankTransfer_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
 
     break
         case "brpt24_paypalPagsguro_Automatic":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
     break
         case "brpt24_paypalPagsguro_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
         // aqui terminar o ciclo de condições
     break
         case "brpt48_creditCard_Automatic":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
     break
         case "brpt48_creditCard_Manual":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
     break
         case "brpt48_creditCard_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
     break
         case "brpt48_creditCard_semiAutomatic":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
 
     break
         case "brpt48_boleto_Manual":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
 
     break
         case "brpt48_boleto_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
 
 
     break
         case "brpt48_bankTransfer_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
 
     break
         case "brpt48_paypalPagsguro_Automatic":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
     break
         case "brpt48_paypalPagsguro_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
         // aqui terminar o ciclo de condições
     break
         case "brpt100_creditCard_Automatic":
 
-         baseOfertas();
+         offersBase();
+         offer10();
 
     break
         case "brpt100_creditCard_Manual":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
     break
         case "brpt100_creditCard_Single":
 
-        baseOfertas();
-
+        offersBase();
+        offer10();
     break
         case "brpt100_creditCard_semiAutomatic":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
 
     break
         case "brpt100_boleto_Manual":
 
-        baseOfertas();
+        offersBase();
+        offer10da();
 
 
     break
         case "brpt100_boleto_Single":
 
-        baseOfertas();
+        offersBase();
 
 
 
     break
         case "brpt100_bankTransfer_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
 
     break
         case "brpt100_paypalPagsguro_Automatic":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
     break
         case "brpt100_paypalPagsguro_Single":
 
-        baseOfertas();
+        offersBase();
+        offer10();
 
         // aqui terminar o ciclo de condições
     break
@@ -484,10 +519,9 @@ function clear(){
     document.getElementById("bonusPL").innerHTML = "";
     document.getElementById("bonusMonths").innerHTML = "";
     document.getElementById("bonusRescue").innerHTML = "";
-    document.getElementById("multa10").innerHTML = "";
 
-    document.getElementById("bonusBol10").innerHTML = "";
-    document.getElementById("bonus1real").innerHTML = "";
+    document.getElementById("offer10").innerHTML = "";
+    document.getElementById("offer10da").innerHTML = "";
 
     document.getElementById("botao").innerHTML = "";
 
@@ -548,46 +582,47 @@ function bonusRescue(){
     // Atribui o texto 
     bonusRescue.appendChild(nome)
 }
-function multa10(){
-    // seleciona o elemento pai
-    var multa10 = document.getElementById("multa10");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Multa de 10%"
-    // Coloca o CheckBox no elemento Pai
-    multa10.appendChild(checkBoxe);
-    // Atribui o texto 
-    multa10.appendChild(nome)
-}
 
-function baseOfertas(){
+function offersBase(){
     bonusPL();
     bonusMonths();
     bonusRescue();
-    multa10();
+    
 }
 
 
 // ***** Ofertas sazonais *****
 
-function bonusBol10(){
+function offer10(){
     // seleciona o elemento pai
-    var bonusBol10 = document.getElementById("bonusBol10");
+    var offer10 = document.getElementById("offer10");
     //cria o elemento e seleciona o atribudo checkbox
     var checkBoxe = document.createElement("input");
     checkBoxe.setAttribute("type", "checkbox");
     // Adiciona o elemento para adicionar o texto no checkbox
     var nome = document.createElement("label");
     // Insere o texto no elemento criado
-    nome.textContent = "Boleto em mais de 10 parcelas"
+    nome.textContent = "Multa de 10% autorizada."
     // Coloca o CheckBox no elemento Pai
-    bonusBol10.appendChild(checkBoxe);
+    offer10.appendChild(checkBoxe);
     // Atribui o texto 
-    bonusBol10.appendChild(nome)
+    offer10.appendChild(nome)
+}
+
+function offer10da(){
+    // seleciona o elemento pai
+    var offer10da = document.getElementById("offer10da");
+    //cria o elemento e seleciona o atribudo checkbox
+    var checkBoxe = document.createElement("input");
+    checkBoxe.setAttribute("type", "checkbox");
+    // Adiciona o elemento para adicionar o texto no checkbox
+    var nome = document.createElement("label");
+    // Insere o texto no elemento criado
+    nome.textContent = "Multa de 10% não autorizada."
+    // Coloca o CheckBox no elemento Pai
+    offer10da.appendChild(checkBoxe);
+    // Atribui o texto 
+    offer10da.appendChild(nome)
 }
 function bonus1real(){
     // seleciona o elemento pai
