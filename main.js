@@ -276,55 +276,67 @@ function offerCourse(){
 
         offersBase();
         offer10();
-
+        offerPoints();
 
     break
         case "brpt12_creditCard_Manual":
 
         offersBase();
         offer10da();
+        bonus1real();
+        offerPoints();
 
     break
         case "brpt12_creditCard_Single":
 
         offersBase();
         offer10();
+        offerPoints();
 
     break
         case "brpt12_creditCard_semiAutomatic":
 
         offersBase();
         offer10da();
+        offerPoints();
+        
 
     break
         case "brpt12_boleto_Manual":
 
         offersBase();
         offer10da();
+        offer12x();
+        offerPoints();
 
     break
         case "brpt12_boleto_Single":
 
         offersBase();
         offer10();
+        offerPoints();
+        offerPoints();
 
     break
         case "brpt12_bankTransfer_Single":
 
         offersBase();
         offer10();
+        offerPoints();
 
     break
         case "brpt12_paypalPagsguro_Automatic":
 
         offersBase();
         offer10();
+        offerPoints();
 
     break
         case "brpt12_paypalPagsguro_Single":
 
         offersBase();
         offer10();
+        offerPoints();
 
         // aqui terminar o ciclo de condições
     break
@@ -332,46 +344,51 @@ function offerCourse(){
 
         offersBase();
         offer10();
+        offerPoints();
  
     break
         case "brpt24_creditCard_Manual":
 
         offersBase();
         offer10da();
+        bonus1real();
+        offerPoints();
 
     break
         case "brpt24_creditCard_Single":
 
         offersBase();
         offer10();
+        offerPoints();
 
     break
         case "brpt24_creditCard_semiAutomatic":
 
         offersBase();
         offer10da();
-
+        offerPoints();
   
     break
         case "brpt24_boleto_Manual":
 
         offersBase();
         offer10da();
-
+        offer12x();
+        offerPoints();
   
     break
         case "brpt24_boleto_Single":
 
         offersBase();
         offer10();
-
-
+        offerPoints();
  
     break
         case "brpt24_bankTransfer_Single":
 
         offersBase();
         offer10();
+        offerPoints();
 
 
     break
@@ -379,12 +396,14 @@ function offerCourse(){
 
         offersBase();
         offer10da();
+        offerPoints();
 
     break
         case "brpt24_paypalPagsguro_Single":
 
         offersBase();
         offer10();
+        offerPoints();
 
         // aqui terminar o ciclo de condições
     break
@@ -392,39 +411,44 @@ function offerCourse(){
 
         offersBase();
         offer10();
+        offerPoints();
 
     break
         case "brpt48_creditCard_Manual":
 
         offersBase();
         offer10da();
+        bonus1real();
+        offerPoints();
 
     break
         case "brpt48_creditCard_Single":
 
         offersBase();
         offer10();
+        offerPoints();
 
     break
         case "brpt48_creditCard_semiAutomatic":
 
         offersBase();
         offer10da();
-
+        offerPoints();
 
     break
         case "brpt48_boleto_Manual":
 
         offersBase();
         offer10da();
-
+        offer12x();
+        offerPoints();
 
     break
         case "brpt48_boleto_Single":
 
         offersBase();
         offer10();
-
+        offerPoints();
 
 
     break
@@ -432,77 +456,87 @@ function offerCourse(){
 
         offersBase();
         offer10();
-
+        offerPoints();
 
     break
         case "brpt48_paypalPagsguro_Automatic":
 
         offersBase();
         offer10();
+        offerPoints();
 
     break
         case "brpt48_paypalPagsguro_Single":
 
         offersBase();
         offer10();
+        offerPoints();
 
         // aqui terminar o ciclo de condições
     break
         case "brpt100_creditCard_Automatic":
 
-         offersBase();
-         offer10();
+        offersBase();
+        offer10();
+        offerPoints();
 
     break
         case "brpt100_creditCard_Manual":
 
         offersBase();
         offer10da();
+        bonus1real();
+        offerPoints();
 
     break
         case "brpt100_creditCard_Single":
 
         offersBase();
         offer10();
+        offerPoints();
+
     break
         case "brpt100_creditCard_semiAutomatic":
 
         offersBase();
         offer10da();
-
+        offerPoints();
 
     break
         case "brpt100_boleto_Manual":
 
         offersBase();
         offer10da();
-
+        offer12x();
+        offerPoints();
 
     break
         case "brpt100_boleto_Single":
 
         offersBase();
-
-
+        offer10();
+        offerPoints();
 
     break
         case "brpt100_bankTransfer_Single":
 
         offersBase();
         offer10();
-
+        offerPoints();
 
     break
         case "brpt100_paypalPagsguro_Automatic":
 
         offersBase();
         offer10();
+        offerPoints();
 
     break
         case "brpt100_paypalPagsguro_Single":
 
         offersBase();
         offer10();
+        offerPoints();
 
         // aqui terminar o ciclo de condições
     break
@@ -522,6 +556,9 @@ function clear(){
 
     document.getElementById("offer10").innerHTML = "";
     document.getElementById("offer10da").innerHTML = "";
+    document.getElementById("bonus1real").innerHTML = "";
+    document.getElementById("offer12x").innerHTML = "";
+    document.getElementById("offerPoints").innerHTML = "";
 
     document.getElementById("botao").innerHTML = "";
 
@@ -556,6 +593,7 @@ function bonusMonths(){
     //cria o elemento e seleciona o atribudo checkbox
     var checkBoxe = document.createElement("input");
     checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputbonusMonths");
     // Adiciona o elemento para adicionar o texto no checkbox
     var nome = document.createElement("label");
     // Insere o texto no elemento criado
@@ -573,6 +611,7 @@ function bonusRescue(){
     //cria o elemento e seleciona o atribudo checkbox
     var checkBoxe = document.createElement("input");
     checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputbonusRescue");
     // Adiciona o elemento para adicionar o texto no checkbox
     var nome = document.createElement("label");
     // Insere o texto no elemento criado
@@ -599,6 +638,7 @@ function offer10(){
     //cria o elemento e seleciona o atribudo checkbox
     var checkBoxe = document.createElement("input");
     checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputOffer10");
     // Adiciona o elemento para adicionar o texto no checkbox
     var nome = document.createElement("label");
     // Insere o texto no elemento criado
@@ -608,13 +648,13 @@ function offer10(){
     // Atribui o texto 
     offer10.appendChild(nome)
 }
-
 function offer10da(){
     // seleciona o elemento pai
     var offer10da = document.getElementById("offer10da");
     //cria o elemento e seleciona o atribudo checkbox
     var checkBoxe = document.createElement("input");
     checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id", "inputOffer10da")
     // Adiciona o elemento para adicionar o texto no checkbox
     var nome = document.createElement("label");
     // Insere o texto no elemento criado
@@ -630,6 +670,7 @@ function bonus1real(){
     //cria o elemento e seleciona o atribudo checkbox
     var checkBoxe = document.createElement("input");
     checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputBonus1real")
     // Adiciona o elemento para adicionar o texto no checkbox
     var nome = document.createElement("label");
     // Insere o texto no elemento criado
@@ -639,23 +680,67 @@ function bonus1real(){
     // Atribui o texto 
     bonus1real.appendChild(nome)
 }
-
-// ***** Cria as Check Box com as ofertas *****
-function botao(){
-    var  botaopai = document.getElementById("botao");
-
-    var botaoinput = document.createElement("button");
-    botaoinput.setAttribute("id", "botaoinput")
-
-    botaoinput.textContent = "Verificar"
-
-    botaopai.appendChild(botaoinput);
+function offer12x(){
+    // seleciona o elemento pai
+    var offer12x = document.getElementById("offer12x");
+    //cria o elemento e seleciona o atribudo checkbox
+    var checkBoxe = document.createElement("input");
+    checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputOffer12x")
+    // Adiciona o elemento para adicionar o texto no checkbox
+    var nome = document.createElement("label");
+    // Insere o texto no elemento criado
+    nome.textContent = "Boleto em mais de 10x";
+    // Coloca o CheckBox no elemento Pai
+    offer12x.appendChild(checkBoxe);
+    // Atribui o texto 
+    offer12x.appendChild(nome)
+}
+function offerPoints(){
+    // seleciona o elemento pai
+    var offerPoints = document.getElementById("offerPoints");
+    //cria o elemento e seleciona o atribudo checkbox
+    var checkBoxe = document.createElement("input");
+    checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputofferPoints")
+    // Adiciona o elemento para adicionar o texto no checkbox
+    var nome = document.createElement("label");
+    // Insere o texto no elemento criado
+    nome.textContent = "Pontos do Portal";
+    // Coloca o CheckBox no elemento Pai
+    offerPoints.appendChild(checkBoxe);
+    // Atribui o texto 
+    offerPoints.appendChild(nome)
 }
 
 //================================================================================
-function alerta(){
-    // Checa que se a caixa esta selecionada ou não
-    var falso = document.getElementById("inputbonusPL").checked
 
-    alert(falso)
+function validateOfferAut(){
+
+    var bonusPL = document.getElementById("inputbonusPL").checked;
+    var bonusMonths = document.getElementById("inputbonusMonths").checked;
+    var bonusRescue = document.getElementById("inputbonusRescue").checked;
+
+    var offer10 = document.getElementById("inputOffer10").checked;
+    var offerPoints = document.getElementById("inputofferPoints").checked;
+
+    var offers = bonusPL +"_"+ bonusMonths +"_"+ bonusRescue +"_"+ offer10 +"_"+ offerPoints;
+                    
+  
+
+
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+//================================================================================
+// ***** Cria as Check Box com as ofertas *****
