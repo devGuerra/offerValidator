@@ -63,7 +63,12 @@ body{
     font-family: 'Open Sans','Arimo','Roboto', sans-serif;
     font-size: 80%;
 }
-
+#botaoEnvia{
+    
+    display: table;
+    margin: 0 auto;
+    padding-top: 10%;
+}
 
 
 

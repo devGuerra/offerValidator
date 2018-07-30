@@ -315,7 +315,6 @@ function offerCourse(){
         offersBase();
         offer10();
         offerPoints();
-        offerPoints();
 
     break
         case "brpt12_bankTransfer_Single":
