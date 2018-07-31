@@ -277,6 +277,7 @@ function offerCourse(){
         offersBase();
         offer10();
         offerPoints();
+        
 
     break
         case "brpt12_creditCard_Manual":
@@ -711,24 +712,126 @@ function offerPoints(){
     // Atribui o texto 
     offerPoints.appendChild(nome)
 }
+//================================================================================
+
+function notPass(){
+    var textId = document.getElementById("validateResult");
+    var createText = document.createElement("h3");
+
+    createText.textContent = "Oferta Inválida";
+
+    textId.appendChild(createText);
+}
+function Pass(){
+    var textId = document.getElementById("validateResult");
+    var createText = document.createElement("h3");
+
+    createText.textContent = "Oferta Válida";
+
+    textId.appendChild(createText);
+}
 
 //================================================================================
 
 function validateOfferAut(){
 
     var bonusPL = document.getElementById("inputbonusPL").checked;
-    var bonusMonths = document.getElementById("inputbonusMonths").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
+    var bonusMonths = document.getElementById("inputbonusMonths").checked;
 
     var offer10 = document.getElementById("inputOffer10").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
 
-    var offers = bonusPL +"_"+ bonusMonths +"_"+ bonusRescue +"_"+ offer10 +"_"+ offerPoints;
-                    
-  
+    var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints;
+            
+    if(bonusPL && bonusRescue == true){
+
+        var textId = document.getElementById("validateResult");
+        var createText = document.createElement("h3");
+    
+        createText.textContent = "Oferta de PL bonus e Resgate não autorizada";
+    
+        textId.appendChild(createText);
+
+    }else if (offers >= 4){
+
+        var textId = document.getElementById("validateResult");
+        var createText = document.createElement("h3");
+    
+        createText.textContent = "Pontos do Portal pode ser combina com até 2 ofertas";
+    
+        textId.appendChild(createText);
+
+    }else {
+        Pass();  
+    }
 
 
     
+}
+
+function validateOfferMan(){
+    var bonusPL = document.getElementById("inputbonusPL").checked;
+    var bonusRescue = document.getElementById("inputbonusRescue").checked;
+    var bonusMonths = document.getElementById("inputbonusMonths").checked;
+
+    var offer10da = document.getElementById("inputOffer10da").checked;
+    var bonus1real = document.getElementById("inputBonus1real").checked;
+    var offerPoints = document.getElementById("inputofferPoints").checked;
+
+    var offers = bonusPL +  bonusRescue +  bonusMonths +  offer10da +  bonus1real +  offerPoints;
+
+    if( bonusPL && bonusRescue == true){
+
+        var textId = document.getElementById("validateResult");
+        var createText = document.createElement("h3");
+    
+        createText.textContent = "Oferta de PL bonus e Resgate não autorizada";
+    
+        textId.appendChild(createText);
+        return;
+
+    }  if ( offer10da == true){
+
+        var textId = document.getElementById("validateResult");
+        var createText = document.createElement("h3");
+    
+        createText.textContent = "Ofertas de 10% no manual apenas com DA";
+    
+        textId.appendChild(createText);
+        return;
+
+    } if(offerPoints && bonus1real == true){
+
+        var textId = document.getElementById("validateResult");
+        var createText = document.createElement("h3");
+    
+        createText.textContent = "Pontos do Portal  + 1 real não autorizado";
+    
+        textId.appendChild(createText);
+        return;
+
+    }  if (offers >= 4) {
+
+        var textId = document.getElementById("validateResult");
+        var createText = document.createElement("h3");
+    
+        createText.textContent = "Pontos do Portal pode ser combina com até 2 ofertas";
+    
+        textId.appendChild(createText);
+        return;
+
+    } else {
+
+        var textId = document.getElementById("validateResult");
+        var createText = document.createElement("h3");
+    
+        createText.textContent = "autorizado";
+    
+        textId.appendChild(createText);
+    }
+
+
 }
 
 
