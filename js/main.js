@@ -713,7 +713,7 @@ function notPass(){
     var textValide = document.createElement("h3");
     textValide.setAttribute("class", "invalidPass")
 
-    textValide.textContent = "Oferta Invalida";
+    textValide.textContent = "Oferta Inválida";
 
     valide.appendChild(textValide);
 }
@@ -724,7 +724,7 @@ function Pass(){
     var textValide = document.createElement("h3");
     textValide.setAttribute("class", "validePass")
 
-    textValide.textContent = "Oferta Valida";
+    textValide.textContent = "Oferta Válida";
 
     valide.appendChild(textValide);
 

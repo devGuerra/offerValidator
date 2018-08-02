@@ -4,17 +4,18 @@ html{
     height: 100%;
 }
 .logo{
-    background-image: url(logo.png);
+    background-image: url(https://et1.ef-cdn.com/dam/englishtown/englishlive2016/englishlive-blue.svg?v=AVl0xDUo);
     background-repeat: no-repeat;
     background-position: center;
-    height: 10em;
+    height: 5em;
+    margin-bottom: 2em;
 }
 body{
 
-    color: #0b0c3f;
+    color: #003F5F;
     margin-left: 15%;
     margin-right: 15%;
-    padding-top: 1em;
+    padding-top: 7em;
     position: relative;
     height: 100%;
 }
@@ -87,6 +88,16 @@ body{
     display: table;
     margin: 0 auto;
     padding-top: 2.5%;
+
+}
+footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #003F5F;
+    text-align: center;
+    
 
 }
 
