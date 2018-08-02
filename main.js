@@ -828,7 +828,7 @@ function validateManual(){
             var textId = document.getElementById("validateResult");
             var createText = document.createElement("h3");
         
-            createText.textContent = "Pontos do Portal  + 1 real não autorizado";
+            createText.textContent = "- Pontos do Portal  + 1 real não autorizado";
         
             textId.appendChild(createText);
             
