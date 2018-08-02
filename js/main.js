@@ -55,7 +55,7 @@ function selectCourse(){
 
         var opcao4 = document.createElement("option");
         opcao4.value = "paypalPagsguro";
-        opcao4.text = "Paypal / Pagsguro";
+        opcao4.text = "PayPal / PagSeguro";
 
         paymentMethod.add(opcao);
         paymentMethod.add(opcao1);
@@ -567,7 +567,7 @@ function bonusPL(){
     // Adiciona o elemento para adicionar o texto no checkbox
     var nome = document.createElement("label");
     // Insere o texto no elemento criado
-    nome.textContent = "PL bonus"
+    nome.textContent = "Dobro de PLs"
     // Coloca o CheckBox no elemento Pai
     bonusPL.appendChild(checkBoxe);
     // Atribui o texto 
@@ -585,7 +585,7 @@ function bonusMonths(){
     // Adiciona o elemento para adicionar o texto no checkbox
     var nome = document.createElement("label");
     // Insere o texto no elemento criado
-    nome.textContent = "Months bonus"
+    nome.textContent = "Extensão de 2 meses"
     // Coloca o CheckBox no elemento Pai
     bonusMonths.appendChild(checkBoxe);
     // Atribui o texto 
@@ -603,7 +603,7 @@ function bonusRescue(){
     // Adiciona o elemento para adicionar o texto no checkbox
     var nome = document.createElement("label");
     // Insere o texto no elemento criado
-    nome.textContent = "Resgate de Aulas"
+    nome.textContent = "Resgate de PLs"
     // Coloca o CheckBox no elemento Pai
     bonusRescue.appendChild(checkBoxe);
     // Atribui o texto 
@@ -663,7 +663,7 @@ function bonus1real(){
     // Adiciona o elemento para adicionar o texto no checkbox
     var nome = document.createElement("label");
     // Insere o texto no elemento criado
-    nome.textContent = "Primeira parcela com 1 real"
+    nome.textContent = "Primeira de R$1"
     // Coloca o CheckBox no elemento Pai
     bonus1real.appendChild(checkBoxe);
     // Atribui o texto 
