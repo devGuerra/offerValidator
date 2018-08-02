@@ -1,7 +1,6 @@
 //================================================================================
-
+//================================================================================
 //   ***** Cria o Payment Method depois de selecionar o Curso *****
-
 function selectCourse(){
 
     var course = document.getElementById("course"); // variavel curso recebe do documento o ID curso
@@ -84,7 +83,7 @@ function selectCourse(){
 
         var opcao14 = document.createElement("option");
         opcao14.value = "paypalPagsguro";
-        opcao14.text = "Paypal / Pagsguro";
+        opcao14.text = "Paypal / PagSeguro";
 
         paymentMethod.add(opcao);
         paymentMethod.add(opcao11);
@@ -112,7 +111,7 @@ function selectCourse(){
 
         var opcao24 = document.createElement("option");
         opcao24.value = "paypalPagsguro";
-        opcao24.text = "Paypal / Pagsguro";
+        opcao24.text = "PayPal / PagSeguro";
 
         paymentMethod.add(opcao);
         paymentMethod.add(opcao21);
@@ -140,7 +139,7 @@ function selectCourse(){
 
         var opcao34 = document.createElement("option");
         opcao34.value = "paypalPagsguro";
-        opcao34.text = "Paypal / Pagsguro";
+        opcao34.text = "PayPal / PagSeguro";
 
         paymentMethod.add(opcao);
         paymentMethod.add(opcao31);
@@ -154,7 +153,7 @@ function selectCourse(){
 }
 
 //================================================================================
-
+//================================================================================
 //  ***** Cria o Payment Schedule apos selecionr o Payment Method *****
 function selectMethod(){
     
@@ -259,11 +258,170 @@ function selectMethod(){
 
     }
 }
+//================================================================================
+//================================================================================
+// ***** Cria as Check Box com as ofertas *****
+
+
+// ***** Ofertas Base *****
+function bonusPL(){
+    // seleciona o elemento pai
+    var bonusPL = document.getElementById("bonusPL");
+    //cria o elemento e seleciona o atribudo checkbox
+    var checkBoxe = document.createElement("input");
+    checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputbonusPL");
+    // Adiciona o elemento para adicionar o texto no checkbox
+    var nome = document.createElement("label");
+    // Insere o texto no elemento criado
+    nome.textContent = "Dobro de PLs"
+    // Coloca o CheckBox no elemento Pai
+    bonusPL.appendChild(checkBoxe);
+    // Atribui o texto 
+    bonusPL.appendChild(nome)
+
+
+}
+function bonusMonths(){
+    // seleciona o elemento pai
+    var bonusMonths = document.getElementById("bonusMonths");
+    //cria o elemento e seleciona o atribudo checkbox
+    var checkBoxe = document.createElement("input");
+    checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputbonusMonths");
+    // Adiciona o elemento para adicionar o texto no checkbox
+    var nome = document.createElement("label");
+    // Insere o texto no elemento criado
+    nome.textContent = "Extensão de 2 meses"
+    // Coloca o CheckBox no elemento Pai
+    bonusMonths.appendChild(checkBoxe);
+    // Atribui o texto 
+    bonusMonths.appendChild(nome)
+
+
+}
+function bonusRescue(){
+    // seleciona o elemento pai
+    var bonusRescue = document.getElementById("bonusRescue");
+    //cria o elemento e seleciona o atribudo checkbox
+    var checkBoxe = document.createElement("input");
+    checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputbonusRescue");
+    // Adiciona o elemento para adicionar o texto no checkbox
+    var nome = document.createElement("label");
+    // Insere o texto no elemento criado
+    nome.textContent = "Resgate de PLs"
+    // Coloca o CheckBox no elemento Pai
+    bonusRescue.appendChild(checkBoxe);
+    // Atribui o texto 
+    bonusRescue.appendChild(nome)
+}
+function bonus50(){
+    var bonus50 = document.getElementById("bonus50");
+    var checkBoxe = document.createElement("input");
+    checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id", "inputbonus50");
+    var nome = document.createElement("label");
+    nome.textContent = "Desconto de 40 a 50%"
+    bonus50.appendChild(checkBoxe);
+    bonus50.appendChild(nome)
+}
+
+function offersBase(){
+
+    bonusPL();
+    bonusMonths();
+    bonusRescue();
+    bonus50()
+    
+}
+
+// ***** Ofertas sazonais *****
+
+function offer10(){
+    // seleciona o elemento pai
+    var offer10 = document.getElementById("offer10");
+    //cria o elemento e seleciona o atribudo checkbox
+    var checkBoxe = document.createElement("input");
+    checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputOffer10");
+    // Adiciona o elemento para adicionar o texto no checkbox
+    var nome = document.createElement("label");
+    // Insere o texto no elemento criado
+    nome.textContent = "Multa de 10%"
+    // Coloca o CheckBox no elemento Pai
+    offer10.appendChild(checkBoxe);
+    // Atribui o texto 
+    offer10.appendChild(nome)
+}
+function offer10da(){
+    // seleciona o elemento pai
+    var offer10da = document.getElementById("offer10da");
+    //cria o elemento e seleciona o atribudo checkbox
+    var checkBoxe = document.createElement("input");
+    checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id", "inputOffer10da")
+    // Adiciona o elemento para adicionar o texto no checkbox
+    var nome = document.createElement("label");
+    // Insere o texto no elemento criado
+    nome.textContent = "Multa de 10%"
+    // Coloca o CheckBox no elemento Pai
+    offer10da.appendChild(checkBoxe);
+    // Atribui o texto 
+    offer10da.appendChild(nome)
+}
+function bonus1real(){
+    // seleciona o elemento pai
+    var bonus1real = document.getElementById("bonus1real");
+    //cria o elemento e seleciona o atribudo checkbox
+    var checkBoxe = document.createElement("input");
+    checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputBonus1real")
+    // Adiciona o elemento para adicionar o texto no checkbox
+    var nome = document.createElement("label");
+    // Insere o texto no elemento criado
+    nome.textContent = "Primeira de R$1"
+    // Coloca o CheckBox no elemento Pai
+    bonus1real.appendChild(checkBoxe);
+    // Atribui o texto 
+    bonus1real.appendChild(nome)
+}
+function offer12x(){
+    // seleciona o elemento pai
+    var offer12x = document.getElementById("offer12x");
+    //cria o elemento e seleciona o atribudo checkbox
+    var checkBoxe = document.createElement("input");
+    checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputOffer12x")
+    // Adiciona o elemento para adicionar o texto no checkbox
+    var nome = document.createElement("label");
+    // Insere o texto no elemento criado
+    nome.textContent = "Boleto em mais de 10x";
+    // Coloca o CheckBox no elemento Pai
+    offer12x.appendChild(checkBoxe);
+    // Atribui o texto 
+    offer12x.appendChild(nome)
+}
+function offerPoints(){
+    // seleciona o elemento pai
+    var offerPoints = document.getElementById("offerPoints");
+    //cria o elemento e seleciona o atribudo checkbox
+    var checkBoxe = document.createElement("input");
+    checkBoxe.setAttribute("type", "checkbox");
+    checkBoxe.setAttribute("id","inputofferPoints")
+    // Adiciona o elemento para adicionar o texto no checkbox
+    var nome = document.createElement("label");
+    // Insere o texto no elemento criado
+    nome.textContent = "Pontos do Portal";
+    // Coloca o CheckBox no elemento Pai
+    offerPoints.appendChild(checkBoxe);
+    // Atribui o texto 
+    offerPoints.appendChild(nome)
+}
 
 //================================================================================
-
+//================================================================================
 //  ***** Compara Curso e Pagamento (Mostra as Checkbox ) *****
-
 function offerCourse(){
 
     var course = document.getElementById("course").value;
@@ -548,163 +706,10 @@ function offerCourse(){
     
 }
 
-//================================================================================
-
-
 
 //================================================================================
-// ***** Cria as Check Box com as ofertas *****
-
-
-// ***** Ofertas Base *****
-function bonusPL(){
-    // seleciona o elemento pai
-    var bonusPL = document.getElementById("bonusPL");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputbonusPL");
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Dobro de PLs"
-    // Coloca o CheckBox no elemento Pai
-    bonusPL.appendChild(checkBoxe);
-    // Atribui o texto 
-    bonusPL.appendChild(nome)
-
-
-}
-function bonusMonths(){
-    // seleciona o elemento pai
-    var bonusMonths = document.getElementById("bonusMonths");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputbonusMonths");
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Extensão de 2 meses"
-    // Coloca o CheckBox no elemento Pai
-    bonusMonths.appendChild(checkBoxe);
-    // Atribui o texto 
-    bonusMonths.appendChild(nome)
-
-
-}
-function bonusRescue(){
-    // seleciona o elemento pai
-    var bonusRescue = document.getElementById("bonusRescue");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputbonusRescue");
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Resgate de PLs"
-    // Coloca o CheckBox no elemento Pai
-    bonusRescue.appendChild(checkBoxe);
-    // Atribui o texto 
-    bonusRescue.appendChild(nome)
-}
-
-function offersBase(){
-
-    bonusPL();
-    bonusMonths();
-    bonusRescue();
-    
-}
-
-
-// ***** Ofertas sazonais *****
-
-function offer10(){
-    // seleciona o elemento pai
-    var offer10 = document.getElementById("offer10");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputOffer10");
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Multa de 10%"
-    // Coloca o CheckBox no elemento Pai
-    offer10.appendChild(checkBoxe);
-    // Atribui o texto 
-    offer10.appendChild(nome)
-}
-function offer10da(){
-    // seleciona o elemento pai
-    var offer10da = document.getElementById("offer10da");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id", "inputOffer10da")
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Multa de 10%"
-    // Coloca o CheckBox no elemento Pai
-    offer10da.appendChild(checkBoxe);
-    // Atribui o texto 
-    offer10da.appendChild(nome)
-}
-function bonus1real(){
-    // seleciona o elemento pai
-    var bonus1real = document.getElementById("bonus1real");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputBonus1real")
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Primeira de R$1"
-    // Coloca o CheckBox no elemento Pai
-    bonus1real.appendChild(checkBoxe);
-    // Atribui o texto 
-    bonus1real.appendChild(nome)
-}
-function offer12x(){
-    // seleciona o elemento pai
-    var offer12x = document.getElementById("offer12x");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputOffer12x")
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Boleto em mais de 10x";
-    // Coloca o CheckBox no elemento Pai
-    offer12x.appendChild(checkBoxe);
-    // Atribui o texto 
-    offer12x.appendChild(nome)
-}
-function offerPoints(){
-    // seleciona o elemento pai
-    var offerPoints = document.getElementById("offerPoints");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputofferPoints")
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Pontos do Portal";
-    // Coloca o CheckBox no elemento Pai
-    offerPoints.appendChild(checkBoxe);
-    // Atribui o texto 
-    offerPoints.appendChild(nome)
-}
 //================================================================================
-
 // Mensagem de autorizado ou não autorizado
-
 function notPass(){
 
     clearResult();
@@ -729,9 +734,8 @@ function Pass(){
     valide.appendChild(textValide);
 
 }
-
 //================================================================================
-
+//================================================================================
 // Valida os itens selecionados na checkbox e compara as ofertas
 
 function validateAutomtic(){
@@ -745,12 +749,13 @@ function validateAutomtic(){
     
     var offer10 = document.getElementById("inputOffer10").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
+    var bonus50 = document.getElementById("inputbonus50").checked;
 
     // soma quantas checkbox foram selecionadas
-    var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints;
+    var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints + bonus50;
 
     // verifica se alguma das combinações não autorizadas esta selecionada
-    if(bonusPL && bonusRescue == true || offerPoints == true && offers >= 3){
+    if(bonusPL && bonusRescue == true || offerPoints == true && offers >= 3 || offerPoints && bonus50 == true && offers >= 3  ){
         notPass();
         // Verifica qual a combinação e exibe uma mensagem para o usuario
        if (bonusPL && bonusRescue == true ){
@@ -774,6 +779,12 @@ function validateAutomtic(){
             // Coloca a tag h3 com a mensagem no elemento e aparece na tela
             textId.appendChild(createText);
         }
+        if(offerPoints && bonus50 == true && offers >= 3 ){
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+            createText.textContent = "- Pontos do Portal com mais de 40% de desconto";
+            textId.appendChild(createText);
+        }
     } else {
         // mostra a mensagem de "AUTORIZADO" na tela
         Pass();
@@ -784,9 +795,7 @@ function validateAutomtic(){
 }
 
 function validateManual(){
-    // limpa os resultados anteriores
-    clearResult();
-    // Verifica quais checkbox são "true"   
+    clearResult();  
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
     var bonusMonths = document.getElementById("inputbonusMonths").checked;
@@ -794,57 +803,45 @@ function validateManual(){
     var offer10da = document.getElementById("inputOffer10da").checked;
     var bonus1real = document.getElementById("inputBonus1real").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
-    // soma quantas checkbox foram selecionadas
-    var offers = bonusPL +  bonusRescue +  bonusMonths +  offer10da +  bonus1real +  offerPoints;
-    // verifica se alguma das combinações não autorizadas esta selecionada
-    if ( bonusPL && bonusRescue == true ||  offer10da == true || offerPoints && bonus1real == true || offerPoints == true && offers >= 3 ){
+    var bonus50 = document.getElementById("inputbonus50").checked;
+
+    var offers = bonus50 + bonusPL +  bonusRescue +  bonusMonths +  offer10da +  bonus1real +  offerPoints;
+    if ( bonusPL && bonusRescue == true ||  offer10da == true || offerPoints && bonus1real == true || offerPoints == true && offers >= 3 || offerPoints && bonus50 == true ){
         notPass();
-        // Verifica qual a combinação e exibe uma mensagem para o usuario
         if ( bonusPL && bonusRescue == true){
-            // Selecionao o elemento no html 
+
             var textId = document.getElementById("validateResult");
-            // cria uma tag H3
             var createText = document.createElement("h3");
-            // Coloca a mensagem dentro da tag h3        
             createText.textContent = "- Oferta de PL bonus e Resgate não autorizada";
-            // Coloca a tag h3 com a mensagem no elemento e aparece na tela
             textId.appendChild(createText);
-    
-    
         } 
         if  ( offer10da == true){
-    
+
             var textId = document.getElementById("validateResult");
             var createText = document.createElement("h3");
-        
-            createText.textContent = "- Multa de 10% no manual";
-        
-            textId.appendChild(createText);
-                  
-    
+            createText.textContent = "- Multa de 10% no manual";        
+            textId.appendChild(createText);    
         }
         if (offerPoints && bonus1real == true){
-    
+
             var textId = document.getElementById("validateResult");
             var createText = document.createElement("h3");
-        
             createText.textContent = "- Pontos do Portal  + 1 real não autorizado";
-        
-            textId.appendChild(createText);
-            
-    
+            textId.appendChild(createText);    
         } 
         if (offerPoints == true && offers >= 3  ) {
-    
+
             var textId = document.getElementById("validateResult");
             var createText = document.createElement("h3");
-        
-            createText.textContent = "- Pontos do Portal com mais de uma Oferta";
-        
+            createText.textContent = "- Pontos do Portal com mais de uma Oferta"; 
             textId.appendChild(createText);
-    
-        }  
-            
+        } 
+        if(offerPoints && bonus50 == true ){
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+            createText.textContent = "- Pontos do Portal com mais de 40% de desconto";
+            textId.appendChild(createText);
+        }         
     }  else {
         Pass();
     }
@@ -852,42 +849,39 @@ function validateManual(){
 }
 
 function validateSingle(){
-    // limpa os resultados anteriores
     clearResult();
-    // Verifica quais checkbox são "true"
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
     var bonusMonths = document.getElementById("inputbonusMonths").checked;
     
     var offer10 = document.getElementById("inputOffer10").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
-    // soma quantas checkbox foram selecionadas
-    var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints;
-    // verifica se alguma das combinações não autorizadas esta selecionada       
-    if(bonusPL && bonusRescue == true || offerPoints == true && offers >= 3){
+    var bonus50 = document.getElementById("inputbonus50").checked;
+
+    var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints + bonus50;      
+    if(bonusPL && bonusRescue == true || offerPoints == true && offers >= 3 || offerPoints && bonus50 == true){
         notPass();
-        // Verifica qual a combinação e exibe uma mensagem para o usuario
         if (bonusPL && bonusRescue == true ){
-            // Selecionao o elemento no html 
+
             var textId = document.getElementById("validateResult");
-            // cria uma tag H3
             var createText = document.createElement("h3");
-            // Coloca a mensagem dentro da tag h3
             createText.textContent = "- Oferta de PL bonus e Resgate não autorizada";
-            // Coloca a tag h3 com a mensagem no elemento e aparece na tela
             textId.appendChild(createText);
         }
         if (offerPoints == true && offers >= 3){
 
             var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");        
+            createText.textContent = "- Pontos do Portal com mais de uma Oferta";        
+            textId.appendChild(createText);
+        }
+        if(offerPoints && bonus50 == true ){
+            var textId = document.getElementById("validateResult");
             var createText = document.createElement("h3");
-        
-            createText.textContent = "- Pontos do Portal com mais de uma Oferta";
-        
+            createText.textContent = "- Pontos do Portal com mais de 40% de desconto";
             textId.appendChild(createText);
         }
     } else {
-        // mostra a mensagem de "AUTORIZADO" na tela
         Pass();
     }
  
@@ -896,60 +890,52 @@ function validateSingle(){
 }
 
 function validateSemiauto (){
+    clearResult();
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
     var bonusMonths = document.getElementById("inputbonusMonths").checked;
-    clearResult();
+
     var offer10da = document.getElementById("inputOffer10da").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
+    var bonus50 = document.getElementById("inputbonus50").checked;
+    var offers = bonusPL +  bonusRescue +  bonusMonths +  offer10da +  offerPoints + bonus50;
 
-    var offers = bonusPL +  bonusRescue +  bonusMonths +  offer10da +  offerPoints;
-
-    if ( bonusPL && bonusRescue == true ||  offer10da == true ||  offerPoints == true && offers >= 3){
-        if ( bonusPL && bonusRescue == true){
-            notPass();
+    if ( bonusPL && bonusRescue == true ||  offer10da == true ||  offerPoints == true && offers >= 3 || offerPoints && bonus50 == true){
+        notPass();
+        if ( bonusPL && bonusRescue == true){          
             var textId = document.getElementById("validateResult");
             var createText = document.createElement("h3");
-    
-        
-            createText.textContent = "- Oferta de PL bonus e Resgate não autorizada";
-        
+            createText.textContent = "- Oferta de PL bonus e Resgate não autorizada";        
             textId.appendChild(createText);
-    
-    
         } 
         if  ( offer10da == true){
-    
+
             var textId = document.getElementById("validateResult");
             var createText = document.createElement("h3");
-        
-            createText.textContent = "- Ofertas de 10% no manual apenas com DA";
-        
-            textId.appendChild(createText);
-                  
-    
+            createText.textContent = "- Ofertas de 10% no manual apenas com DA";  
+            textId.appendChild(createText);   
         }
-        if (offerPoints == true && offers >= 3) {
-    
+        if (offerPoints == true && offers >= 3) {   
+
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");       
+            createText.textContent = "- Pontos do Portal com mais de uma Oferta";        
+            textId.appendChild(createText);    
+        }    
+        if(offerPoints && bonus50 == true ){
             var textId = document.getElementById("validateResult");
             var createText = document.createElement("h3");
-        
-            createText.textContent = "- Pontos do Portal com mais de uma Oferta";
-        
+            createText.textContent = "- Pontos do Portal com mais de 40% de desconto";
             textId.appendChild(createText);
-    
-        }  
-            
+        }         
     }  else {
         Pass();
     }
-
 }
 
 function validateBoletoManual(){
-    // limpa os resultados anteriores
-    clearResult();
-    // Verifica quais checkbox são "true"   
+
+    clearResult();  
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
     var bonusMonths = document.getElementById("inputbonusMonths").checked;
@@ -957,103 +943,79 @@ function validateBoletoManual(){
     var offer10da = document.getElementById("inputOffer10da").checked;
     var offer12x = document.getElementById("inputOffer12x").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
-    // soma quantas checkbox foram selecionadas
+    var bonus50 = document.getElementById("inputbonus50").checked;
     var offers = bonusPL +  bonusRescue +  bonusMonths +  offer10da +  offerPoints + offer12x;
     notPass();
-    // verifica se alguma das combinações não autorizadas esta selecionada
-    if ( bonusPL && bonusRescue == true ||  offer10da == true || offer12x == true || offerPoints == true && offers >= 3 ){
-        // Verifica qual a combinação e exibe uma mensagem para o usuario
+    if ( bonusPL && bonusRescue == true ||  offer10da == true || offer12x == true || offerPoints == true && offers >= 3 || offerPoints && bonus50 == true ){
         if ( bonusPL && bonusRescue == true){
-            // Selecionao o elemento no html 
+
             var textId = document.getElementById("validateResult");
-            // cria uma tag H3
-            var createText = document.createElement("h3");
-            // Coloca a mensagem dentro da tag h3        
+            var createText = document.createElement("h3");    
             createText.textContent = "- Oferta de PL bonus e Resgate não autorizada";
-            // Coloca a tag h3 com a mensagem no elemento e aparece na tela
-            textId.appendChild(createText);
-    
-    
+            textId.appendChild(createText);   
         } 
         if  ( offer10da == true){
     
             var textId = document.getElementById("validateResult");
             var createText = document.createElement("h3");
-        
-            createText.textContent = "- Ofertas de 10% no manual apenas com DA";
-        
-            textId.appendChild(createText);
-                  
-    
+            createText.textContent = "- Ofertas de 10% no manual apenas com DA";        
+            textId.appendChild(createText);   
         }
         if (offer12x == true){
     
             var textId = document.getElementById("validateResult");
             var createText = document.createElement("h3");
-        
             createText.textContent = "- Boleto com mais de 10 parcelas";
-        
-            textId.appendChild(createText);
-            
-    
+            textId.appendChild(createText);    
         } 
         if (offerPoints == true && offers >= 3) {
-    
             var textId = document.getElementById("validateResult");
             var createText = document.createElement("h3");
-        
             createText.textContent = "- Pontos do Portal com mais de uma Oferta";
-        
             textId.appendChild(createText);
-    
         }  
-            
+        if(offerPoints && bonus50 == true ){
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+            createText.textContent = "- Pontos do Portal com mais de 40% de desconto";
+            textId.appendChild(createText);
+        }
     }  else {
         Pass();
     }
-
 }
-
-
-
+//================================================================================
 //================================================================================
 // Verifica qual Schedule do pagamento e seleciona a validação correta de checkbox
 function validateSchedule(){
     var paymentSchedule = document.getElementById("paymentSchedule").value;
     
-
     if ( paymentSchedule == "Automatic"){
 
         validateAutomtic()
-
     } else if (paymentSchedule == "Manual"){
 
         validateManual()
-
     } else if(paymentSchedule == "Single"|| paymentSchedule == "boletoSingle"  ){
 
         validateSingle()
-
     } else if(paymentSchedule == "semiAutomatic"){
 
         validateSemiauto()
-
     } else if(paymentSchedule == "boletoManual"){
+
         validateBoletoManual()
     }
 }
-
-
-
 //================================================================================
-// ***** Cria as Check Box com as ofertas *****
-
+//================================================================================
 //  ***** Apaga as checkBox das tela *****
 
 function clear(){
     document.getElementById("bonusPL").innerHTML = "";
     document.getElementById("bonusMonths").innerHTML = "";
     document.getElementById("bonusRescue").innerHTML = "";
+    document.getElementById("bonus50").innerHTML = "";
 
     document.getElementById("offer10").innerHTML = "";
     document.getElementById("offer10da").innerHTML = "";
