@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Offer Validator</title>
+    <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="main.css">
@@ -41,7 +42,7 @@
     </div>  
 
 
-    <div class="bonusOffer" id="seletorBonus">
+    <div class="bonusOffer" id="seletorBonus"  onclick="validateSchedule()">
         
         <div id="bonusPL"></div>    
         <div id="bonusMonths"></div>
@@ -49,7 +50,7 @@
 
     </div>
 
-    <div id="offerAdditional" class="offerAdditional">
+    <div id="offerAdditional" class="offerAdditional" onclick="validateSchedule()">
         <div id="offer10"></div>
         <div id="offer10da"></div>
         <div id="bonus1real"></div>
@@ -58,9 +59,8 @@
 
     </div>
 
-    <div id="botaoEnvia">
-        <div id="botao" ></div>
-        <button onclick="validateSchedule();" >Checkar</button>
+    <div>
+        <div id="valideorNot"></div>
     </div>
 
     <div>

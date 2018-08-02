@@ -11,7 +11,7 @@ html{
 }
 body{
 
-    color: black;
+    color: #0b0c3f;
     margin-left: 15%;
     margin-right: 15%;
     padding-top: 1em;
@@ -69,7 +69,26 @@ body{
     margin: 0 auto;
     padding-top: 10%;
 }
+.validePass{
+    color: green;
+    font-size: 180%;
+    display: table;
+    margin: 0 auto;
+    padding-top: 2.5%
+}
+.invalidPass{
+    color: red;
+    font-size: 180%;
+    display: table;
+    margin: 0 auto;
+    padding-top: 2.5%
+}
+#validateResult{
+    display: table;
+    margin: 0 auto;
+    padding-top: 2.5%;
 
+}
 
 
 
