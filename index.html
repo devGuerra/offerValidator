@@ -32,7 +32,7 @@
     
                 </select>
 
-                <select name="paymentSchedule" id="paymentSchedule" class="smallCase" onchange="offerCourse()">
+                <select name="paymentSchedule" id="paymentSchedule" class="smallCase" onchange="offerCourse()" onchange="">
                     <!-- Cria um seleção de opções, onchange chama a função se for quando for -->
     
                     <option value="">Payment Schedule</option>
@@ -60,11 +60,13 @@
 
     <div id="botaoEnvia">
         <div id="botao" ></div>
-        <button onclick="validateOfferMan()">Checkar</button>
+        <button onclick="validateSchedule();" >Checkar</button>
     </div>
 
     <div>
         <div id="validateResult"></div>
+    </div>
+
     </div>
 
 </body>

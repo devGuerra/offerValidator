@@ -31,7 +31,8 @@ function selectCourse(){
     //======================================================================================================
 
     // clear as checkboxes
-    clear()
+    clear();
+    clearResult();
     //======================================================================================================
     
     if( courseSelected == "brpt12"){
@@ -172,7 +173,8 @@ function selectMethod(){
 
     //======================================================================================================
     //                  clear as Checkbox da pagina
-    clear()
+    clear();
+    clearResult();
 
     if( paymentSelected == "creditCard"){
 
@@ -210,11 +212,11 @@ function selectMethod(){
         opcao.text = "Payment Schedule";
 
         var opcao11 = document.createElement("option");
-        opcao11.value = "Manual";
+        opcao11.value = "boletoManual";
         opcao11.text = "Manual";
 
         var opcao12 = document.createElement("option");
-        opcao12.value = "Single";
+        opcao12.value = "boletoSingle";
         opcao12.text = "Single";
 
 
@@ -270,6 +272,7 @@ function offerCourse(){
 
     var saleCourse = course +"_"+ paymentMethod +"_"+ paymentSchedule;
     clear();
+    clearResult();
 
     switch(saleCourse){
         case "brpt12_creditCard_Automatic":
@@ -303,7 +306,7 @@ function offerCourse(){
         
 
     break
-        case "brpt12_boleto_Manual":
+        case "brpt12_boleto_boletoManual":
 
         offersBase();
         offer10da();
@@ -311,7 +314,7 @@ function offerCourse(){
         offerPoints();
 
     break
-        case "brpt12_boleto_Single":
+        case "brpt12_boleto_boletoSingle":
 
         offersBase();
         offer10();
@@ -369,7 +372,7 @@ function offerCourse(){
         offerPoints();
   
     break
-        case "brpt24_boleto_Manual":
+        case "brpt24_boleto_boletoManual":
 
         offersBase();
         offer10da();
@@ -377,7 +380,7 @@ function offerCourse(){
         offerPoints();
   
     break
-        case "brpt24_boleto_Single":
+        case "brpt24_boleto_boletoSingle":
 
         offersBase();
         offer10();
@@ -436,7 +439,7 @@ function offerCourse(){
         offerPoints();
 
     break
-        case "brpt48_boleto_Manual":
+        case "brpt48_boleto_boletoManual":
 
         offersBase();
         offer10da();
@@ -444,7 +447,7 @@ function offerCourse(){
         offerPoints();
 
     break
-        case "brpt48_boleto_Single":
+        case "brpt48_boleto_boletoSingle":
 
         offersBase();
         offer10();
@@ -503,7 +506,7 @@ function offerCourse(){
         offerPoints();
 
     break
-        case "brpt100_boleto_Manual":
+        case "brpt100_boleto_boletoManual":
 
         offersBase();
         offer10da();
@@ -511,7 +514,7 @@ function offerCourse(){
         offerPoints();
 
     break
-        case "brpt100_boleto_Single":
+        case "brpt100_boleto_boletoSingle":
 
         offersBase();
         offer10();
@@ -547,22 +550,7 @@ function offerCourse(){
 
 //================================================================================
 
-//  ***** Apaga as checkBox das tela *****
 
-function clear(){
-    document.getElementById("bonusPL").innerHTML = "";
-    document.getElementById("bonusMonths").innerHTML = "";
-    document.getElementById("bonusRescue").innerHTML = "";
-
-    document.getElementById("offer10").innerHTML = "";
-    document.getElementById("offer10da").innerHTML = "";
-    document.getElementById("bonus1real").innerHTML = "";
-    document.getElementById("offer12x").innerHTML = "";
-    document.getElementById("offerPoints").innerHTML = "";
-
-    document.getElementById("botao").innerHTML = "";
-
-}
 
 //================================================================================
 // ***** Cria as Check Box com as ofertas *****
@@ -623,6 +611,7 @@ function bonusRescue(){
 }
 
 function offersBase(){
+
     bonusPL();
     bonusMonths();
     bonusRescue();
@@ -642,7 +631,7 @@ function offer10(){
     // Adiciona o elemento para adicionar o texto no checkbox
     var nome = document.createElement("label");
     // Insere o texto no elemento criado
-    nome.textContent = "Multa de 10% autorizada."
+    nome.textContent = "Multa de 10%"
     // Coloca o CheckBox no elemento Pai
     offer10.appendChild(checkBoxe);
     // Atribui o texto 
@@ -658,7 +647,7 @@ function offer10da(){
     // Adiciona o elemento para adicionar o texto no checkbox
     var nome = document.createElement("label");
     // Insere o texto no elemento criado
-    nome.textContent = "Multa de 10% não autorizada."
+    nome.textContent = "Multa de 10%"
     // Coloca o CheckBox no elemento Pai
     offer10da.appendChild(checkBoxe);
     // Atribui o texto 
@@ -714,6 +703,8 @@ function offerPoints(){
 }
 //================================================================================
 
+// Mensagem de autorizado ou não autorizado
+
 function notPass(){
     var textId = document.getElementById("validateResult");
     var createText = document.createElement("h3");
@@ -733,116 +724,335 @@ function Pass(){
 
 //================================================================================
 
-function validateOfferAut(){
+// Valida os itens selecionados na checkbox e compara as ofertas
 
+function validateAutomtic(){
+    // limpa os resultados anteriores
+    clearResult();
+
+    // Verifica quais checkbox são "true"
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
     var bonusMonths = document.getElementById("inputbonusMonths").checked;
-
+    
     var offer10 = document.getElementById("inputOffer10").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
 
+    // soma quantas checkbox foram selecionadas
     var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints;
-            
-    if(bonusPL && bonusRescue == true){
 
-        var textId = document.getElementById("validateResult");
-        var createText = document.createElement("h3");
-    
-        createText.textContent = "Oferta de PL bonus e Resgate não autorizada";
-    
-        textId.appendChild(createText);
+    // verifica se alguma das combinações não autorizadas esta selecionada
+    if(bonusPL && bonusRescue == true || offers >= 3){
 
-    }else if (offers >= 4){
+        // Verifica qual a combinação e exibe uma mensagem para o usuario
+       if (bonusPL && bonusRescue == true ){
 
-        var textId = document.getElementById("validateResult");
-        var createText = document.createElement("h3");
-    
-        createText.textContent = "Pontos do Portal pode ser combina com até 2 ofertas";
-    
-        textId.appendChild(createText);
-
-    }else {
-        Pass();  
+            // Selecionao o elemento no html 
+            var textId = document.getElementById("validateResult");
+            // cria uma tag H3
+            var createText = document.createElement("h3");
+            // Coloca a mensagem dentro da tag h3
+            createText.textContent = "PL bonus + Resgate: Não autorizado";
+            // Coloca a tag h3 com a mensagem no elemento e aparece na tela
+            textId.appendChild(createText);
+        }
+        if (offers >= 3){
+            // Selecionao o elemento no html 
+            var textId = document.getElementById("validateResult");
+            // cria uma tag H3
+            var createText = document.createElement("h3");
+            // Coloca a mensagem dentro da tag h3
+            createText.textContent = "Pontos do Portal Com mais de 1 Oferta";
+            // Coloca a tag h3 com a mensagem no elemento e aparece na tela
+            textId.appendChild(createText);
+        }
+    } else {
+        // mostra a mensagem de "AUTORIZADO" na tela
+        Pass();
     }
 
 
     
 }
 
-function validateOfferMan(){
+function validateManual(){
+    // limpa os resultados anteriores
+    clearResult();
+    // Verifica quais checkbox são "true"   
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
     var bonusMonths = document.getElementById("inputbonusMonths").checked;
-
+    
     var offer10da = document.getElementById("inputOffer10da").checked;
     var bonus1real = document.getElementById("inputBonus1real").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
-
+    // soma quantas checkbox foram selecionadas
     var offers = bonusPL +  bonusRescue +  bonusMonths +  offer10da +  bonus1real +  offerPoints;
-
-    if( bonusPL && bonusRescue == true){
-
-        var textId = document.getElementById("validateResult");
-        var createText = document.createElement("h3");
+    // verifica se alguma das combinações não autorizadas esta selecionada
+    if ( bonusPL && bonusRescue == true ||  offer10da == true || offerPoints && bonus1real == true || offers >= 3 ){
+        // Verifica qual a combinação e exibe uma mensagem para o usuario
+        if ( bonusPL && bonusRescue == true){
+            // Selecionao o elemento no html 
+            var textId = document.getElementById("validateResult");
+            // cria uma tag H3
+            var createText = document.createElement("h3");
+            // Coloca a mensagem dentro da tag h3        
+            createText.textContent = "Oferta de PL bonus e Resgate não autorizada";
+            // Coloca a tag h3 com a mensagem no elemento e aparece na tela
+            textId.appendChild(createText);
     
-        createText.textContent = "Oferta de PL bonus e Resgate não autorizada";
     
-        textId.appendChild(createText);
-        return;
-
-    }  if ( offer10da == true){
-
-        var textId = document.getElementById("validateResult");
-        var createText = document.createElement("h3");
+        } 
+        if  ( offer10da == true){
     
-        createText.textContent = "Ofertas de 10% no manual apenas com DA";
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+        
+            createText.textContent = "Ofertas de 10% no manual apenas com DA";
+        
+            textId.appendChild(createText);
+                  
     
-        textId.appendChild(createText);
-        return;
-
-    } if(offerPoints && bonus1real == true){
-
-        var textId = document.getElementById("validateResult");
-        var createText = document.createElement("h3");
+        }
+        if (offerPoints && bonus1real == true){
     
-        createText.textContent = "Pontos do Portal  + 1 real não autorizado";
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+        
+            createText.textContent = "Pontos do Portal  + 1 real não autorizado";
+        
+            textId.appendChild(createText);
+            
     
-        textId.appendChild(createText);
-        return;
-
-    }  if (offers >= 4) {
-
-        var textId = document.getElementById("validateResult");
-        var createText = document.createElement("h3");
+        } 
+        if (offers >= 3) {
     
-        createText.textContent = "Pontos do Portal pode ser combina com até 2 ofertas";
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+        
+            createText.textContent = "Pontos do Portal pode ser combina com até 2 ofertas";
+        
+            textId.appendChild(createText);
     
-        textId.appendChild(createText);
-        return;
-
-    } else {
-
-        var textId = document.getElementById("validateResult");
-        var createText = document.createElement("h3");
-    
-        createText.textContent = "autorizado";
-    
-        textId.appendChild(createText);
+        }  
+            
+    }  else {
+        Pass();
     }
 
+}
+
+function validateSingle(){
+    // limpa os resultados anteriores
+    clearResult();
+    // Verifica quais checkbox são "true"
+    var bonusPL = document.getElementById("inputbonusPL").checked;
+    var bonusRescue = document.getElementById("inputbonusRescue").checked;
+    var bonusMonths = document.getElementById("inputbonusMonths").checked;
+    
+    var offer10 = document.getElementById("inputOffer10").checked;
+    var offerPoints = document.getElementById("inputofferPoints").checked;
+    // soma quantas checkbox foram selecionadas
+    var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints;
+    // verifica se alguma das combinações não autorizadas esta selecionada       
+    if(bonusPL && bonusRescue == true || offers >= 3){
+        // Verifica qual a combinação e exibe uma mensagem para o usuario
+        if (bonusPL && bonusRescue == true ){
+            // Selecionao o elemento no html 
+            var textId = document.getElementById("validateResult");
+            // cria uma tag H3
+            var createText = document.createElement("h3");
+            // Coloca a mensagem dentro da tag h3
+            createText.textContent = "Oferta de PL bonus e Resgate não autorizada";
+            // Coloca a tag h3 com a mensagem no elemento e aparece na tela
+            textId.appendChild(createText);
+        }
+        if (offers >= 3){
+
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+        
+            createText.textContent = "Pontos do Portal pode ser combina com até 2 ofertas";
+        
+            textId.appendChild(createText);
+        }
+    } else {
+        // mostra a mensagem de "AUTORIZADO" na tela
+        Pass();
+    }
+ 
+ 
+    
+}
+
+function validateSemiauto (){
+    var bonusPL = document.getElementById("inputbonusPL").checked;
+    var bonusRescue = document.getElementById("inputbonusRescue").checked;
+    var bonusMonths = document.getElementById("inputbonusMonths").checked;
+    clearResult();
+    var offer10da = document.getElementById("inputOffer10da").checked;
+    var offerPoints = document.getElementById("inputofferPoints").checked;
+
+    var offers = bonusPL +  bonusRescue +  bonusMonths +  offer10da +  offerPoints;
+
+    if ( bonusPL && bonusRescue == true ||  offer10da == true ||  offers >= 3 ){
+        if ( bonusPL && bonusRescue == true){
+
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+    
+        
+            createText.textContent = "Oferta de PL bonus e Resgate não autorizada";
+        
+            textId.appendChild(createText);
+    
+    
+        } 
+        if  ( offer10da == true){
+    
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+        
+            createText.textContent = "Ofertas de 10% no manual apenas com DA";
+        
+            textId.appendChild(createText);
+                  
+    
+        }
+        if (offers >= 3) {
+    
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+        
+            createText.textContent = "Pontos do Portal pode ser combina com até 2 ofertas";
+        
+            textId.appendChild(createText);
+    
+        }  
+            
+    }  else {
+        Pass();
+    }
+
+}
+
+function validateBoletoManual(){
+    // limpa os resultados anteriores
+    clearResult();
+    // Verifica quais checkbox são "true"   
+    var bonusPL = document.getElementById("inputbonusPL").checked;
+    var bonusRescue = document.getElementById("inputbonusRescue").checked;
+    var bonusMonths = document.getElementById("inputbonusMonths").checked;
+    
+    var offer10da = document.getElementById("inputOffer10da").checked;
+    var offer12x = document.getElementById("inputOffer12x").checked;
+    var offerPoints = document.getElementById("inputofferPoints").checked;
+    // soma quantas checkbox foram selecionadas
+    var offers = bonusPL +  bonusRescue +  bonusMonths +  offer10da +  offerPoints + offer12x;
+    // verifica se alguma das combinações não autorizadas esta selecionada
+    if ( bonusPL && bonusRescue == true ||  offer10da == true || offer12x == true || offers >= 3 ){
+        // Verifica qual a combinação e exibe uma mensagem para o usuario
+        if ( bonusPL && bonusRescue == true){
+            // Selecionao o elemento no html 
+            var textId = document.getElementById("validateResult");
+            // cria uma tag H3
+            var createText = document.createElement("h3");
+            // Coloca a mensagem dentro da tag h3        
+            createText.textContent = "Oferta de PL bonus e Resgate não autorizada";
+            // Coloca a tag h3 com a mensagem no elemento e aparece na tela
+            textId.appendChild(createText);
+    
+    
+        } 
+        if  ( offer10da == true){
+    
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+        
+            createText.textContent = "Ofertas de 10% no manual apenas com DA";
+        
+            textId.appendChild(createText);
+                  
+    
+        }
+        if (offer12x == true){
+    
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+        
+            createText.textContent = "Boleto com mais de 10x";
+        
+            textId.appendChild(createText);
+            
+    
+        } 
+        if (offers >= 3) {
+    
+            var textId = document.getElementById("validateResult");
+            var createText = document.createElement("h3");
+        
+            createText.textContent = "Pontos do Portal pode ser combina com até 2 ofertas";
+        
+            textId.appendChild(createText);
+    
+        }  
+            
+    }  else {
+        Pass();
+    }
 
 }
 
 
 
+//================================================================================
+// Verifica qual Schedule do pagamento e seleciona a validação correta de checkbox
+function validateSchedule(){
+    var paymentSchedule = document.getElementById("paymentSchedule").value;
 
+    if ( paymentSchedule == "Automatic"){
 
+        validateAutomtic()
 
+    } else if (paymentSchedule == "Manual"){
 
+        validateManual()
 
+    } else if(paymentSchedule == "Single"|| paymentSchedule == "boletoSingle"  ){
+
+        validateSingle()
+
+    } else if(paymentSchedule == "semiAutomatic"){
+
+        validateSemiauto()
+
+    } else if(paymentSchedule == "boletoManual"){
+        validateBoletoManual()
+    }
+}
 
 
 
 //================================================================================
 // ***** Cria as Check Box com as ofertas *****
+
+//  ***** Apaga as checkBox das tela *****
+
+function clear(){
+    document.getElementById("bonusPL").innerHTML = "";
+    document.getElementById("bonusMonths").innerHTML = "";
+    document.getElementById("bonusRescue").innerHTML = "";
+
+    document.getElementById("offer10").innerHTML = "";
+    document.getElementById("offer10da").innerHTML = "";
+    document.getElementById("bonus1real").innerHTML = "";
+    document.getElementById("offer12x").innerHTML = "";
+    document.getElementById("offerPoints").innerHTML = "";
+
+    document.getElementById("botao").innerHTML = "";
+
+
+}
+function clearResult(){
+    document.getElementById("validateResult").innerHTML = "";
+}
