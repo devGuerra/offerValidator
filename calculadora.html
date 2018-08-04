@@ -1,0 +1,42 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calculadora </title>
+    <link rel="icon" href="images/favicon.ico" type="image/gif" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/calculadora.css" />
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <script src="js/calculadora.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="images/logoenglishlive.png" alt="logo english live com fundo branco">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="validator.html">Validador</a></li>
+            <li><a href="calculadora.html">Calculadora</a></li>
+        </ul>
+    </nav>
+    <div class="logo"></div>
+    <div class="valueInput container" id="valueInput">
+        <input type="number" class="finalPrice" id="finalPrice" placeholder="Digite o valor"  >
+    </div>  
+    <div class="container" id="buttonInput">
+        <button class="buttonInput" onclick="percentage12()">PT 12 PL</button>
+        <button class="buttonInput"onclick="percentage24()">PT 24 PL</button>
+        <button class="buttonInput"onclick="percentage48()">PT 48 PL</button>
+        <button class="buttonInput"onclick="percentage100()">PT 100 PL</button>
+    </div>
+    <div>
+        <p class="result container"id="result"></p>
+    </div>
+    <footer>
+            Created by Roberto Guerra
+    </footer>
+</body>
+</html>

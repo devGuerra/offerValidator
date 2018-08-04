@@ -1,0 +1,77 @@
+html{
+    background-color: rgba(226, 226, 226, 0.397);
+    font-size: 120%;
+    height: 100%;
+}
+.logo{
+    background-image: url(https://et1.ef-cdn.com/dam/englishtown/englishlive2016/englishlive-blue.svg?v=AVl0xDUo);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 3em;
+    margin-bottom: 2em;
+    
+}
+body{
+
+    color: #003F5F;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 7em;
+    position: relative;
+    height: 100%;
+}
+
+.container{
+    display: table;
+    margin: 0 auto;
+}
+#finalPrice{
+
+    border: 1px solid grey;
+    border-radius: 0.25em;    
+    background-color: #f1e0e023;
+    width: 17.5em;
+    height: 1.75em; 
+    
+}
+input[type="number"]{
+    font-size: 2em;
+    text-align: center;
+    
+}
+.buttonInput{
+    height: 3em;
+    width: 6em;
+    border: none;
+    border: 1px solid grey;
+    border-radius: 0.25em;
+    background-color:#f1e0e023;
+    margin: 1em;
+}
+.result{
+    font-size: 2.5em
+}
+
+
+.validePass{
+    color: green;
+    font-size: 180%;
+    display: table;
+    margin: 0 auto;
+    padding-top: 2.5%
+}
+.invalidPass{
+    color: red;
+    font-size: 180%;
+    display: table;
+    margin: 0 auto;
+    padding-top: 2.5%
+}
+.result{
+    padding-top: 2.5%;
+}
+
+
+
+    
+
