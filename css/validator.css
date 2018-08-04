@@ -1,24 +1,4 @@
-html{
-    background-color: rgba(226, 226, 226, 0.397);
-    font-size: 120%;
-    height: 100%;
-}
-.logo{
-    background-image: url(https://et1.ef-cdn.com/dam/englishtown/englishlive2016/englishlive-blue.svg?v=AVl0xDUo);
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 3em;
-    margin-bottom: 2em;
-}
-body{
 
-    color: #003F5F;
-    margin-left: 15%;
-    margin-right: 15%;
-    padding-top: 7em;
-    position: relative;
-    height: 100%;
-}
 .seletores div{
     display: table;
     margin: 0 auto  

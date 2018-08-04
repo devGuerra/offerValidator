@@ -3,18 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Offer Validator</title>
+    <title>Validator - Ofertas</title>
     <link rel="icon" href="images/favicon.ico" type="image/gif" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/validator.css">
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
     <script src="js/validator.js"></script>
+    <script src="js/default.js"></script>
 </head>
 <body>
+    <div class="logo">
+        <img src="images/logo.png" alt="logo english live" onclick="reloadPage()">
+    </div>
+
     <nav class="navbar">
-        <img src="images/logoenglishlive.png" alt="logo english live com fundo branco">
+        <div class="logoNavbar"></div>
         <ul >
             <li><a href="index.html">Home</a></li>
             <li><a href="validator.html">Validador</a></li>
@@ -22,33 +26,31 @@
         </ul>
     </nav>
     
-    <div class="logo"></div>
-
     <div class="seletores">
-            <div>
-    
-                <select name="course" id="course" class="case"  onchange="selectCourse()"> <!-- Cria um seleção de opções, onchange chama a função se for quando for -->
-    
-                    <option class="selecioneCurso" value="">Product</option>
-                    <option value="brpt12">BR Private Teacher 12 PL's</option>
-                    <option value="brpt24">BR Private Teacher 24 PL's</option> <!-- Cria as opções com o valor especificado-->
-                    <option value="brpt48">BR Private Teacher 48 PL's</option>
-                    <option value="brpt100">BR Private Teacher 100 PL's</option>
-    
-                </select>
-            </div>
-            <div>
-                <select name="paymentMethod" id="paymentMethod" class="smallCase"  onchange="selectMethod()" > <!-- Cria um seleção de opções, onchange chama a função se for quando for -->
-                    <option value="">Payment Method</option>
-    
-                </select>
+        <div>
 
-                <select name="paymentSchedule" id="paymentSchedule" class="smallCase" onchange="offerCourse()" onchange="">
-                    <!-- Cria um seleção de opções, onchange chama a função se for quando for -->
-    
-                    <option value="">Payment Schedule</option>
-                </select>
-           </div>
+            <select name="course" id="course" class="case"  onchange="selectCourse()"> <!-- Cria um seleção de opções, onchange chama a função se for quando for -->
+
+                <option class="selecioneCurso" value="">Product</option>
+                <option value="brpt12">BR Private Teacher 12 PL's</option>
+                <option value="brpt24">BR Private Teacher 24 PL's</option> <!-- Cria as opções com o valor especificado-->
+                <option value="brpt48">BR Private Teacher 48 PL's</option>
+                <option value="brpt100">BR Private Teacher 100 PL's</option>
+
+            </select>
+        </div>
+        <div>
+            <select name="paymentMethod" id="paymentMethod" class="smallCase"  onchange="selectMethod()" > <!-- Cria um seleção de opções, onchange chama a função se for quando for -->
+                <option value="">Payment Method</option>
+
+            </select>
+
+            <select name="paymentSchedule" id="paymentSchedule" class="smallCase" onchange="offerCourse()" onchange="">
+                <!-- Cria um seleção de opções, onchange chama a função se for quando for -->
+
+                <option value="">Payment Schedule</option>
+            </select>
+        </div>
     </div>  
 
 
@@ -70,17 +72,13 @@
 
     </div>
 
-    <div>
-        <div id="valideorNot"></div>
+
+    <div id="valideorNot"></div>
+
+    <div id="validateResult">
+        <h3 id="valideH3"></h3>
     </div>
 
-    <div>
-        <div id="validateResult">
-            <h3 id="valideH3"></h3>
-        </div>
-    </div>
-
-    </div>
     <footer>
         Created by Roberto Guerra
     </footer>
