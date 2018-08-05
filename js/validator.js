@@ -1,6 +1,20 @@
-//================================================================================
-//================================================================================
-//   ***** Cria o Payment Method depois de selecionar o Curso *****
+//======================================================================================================
+//======================================================================================================
+function createOptions(optionNumber, valueContent, textContent, payment){ // Função para criar novas Opções no select
+    
+    var optionNumber = document.createElement("option");
+    optionNumber.value = valueContent;
+    optionNumber.text = textContent;
+    payment.add(optionNumber)
+    return;
+    
+}
+
+//======================================================================================================
+//                                          Payment Method
+//                       ***** Cria o Payment Method depois de selecionar o Curso *****
+//======================================================================================================
+
 function selectCourse(){
 
     var course = document.getElementById("course"); // variavel curso recebe do documento o ID curso
@@ -9,12 +23,9 @@ function selectCourse(){
     var courseSelected = course.options[course.selectedIndex].value; // valor recebe nas opções de curso o valor o item selecionado
 
    //========================================================================================================
-
-    //                         ===== removee os itens caso o Couse não seja selecionado ======
-
-    var methodLength = paymentMethod.options.length; //quantidade recebe a quantidade de opções no pagamento
+    //                         ===== remove os itens caso o Course não seja selecionado ======
     var i; // cria a variavel i
-    for(i = paymentMethod.options.length-1 ; i >= 0 ; i--) // enquanto a quantidade opções no pagamento
+    for(i = paymentMethod.options.length-1 ; i >= 0 ; i--)  // enquanto a quantidade opções no pagamento
     {
         paymentMethod.remove(i);
     }
@@ -22,13 +33,12 @@ function selectCourse(){
     var paymentSchedule = document.getElementById("paymentSchedule");
 
     var i; // cria a variavel i
-    for(i = paymentSchedule.options.length-1 ; i >= 0 ; i--) // enquanto a quantidade opções no pagamento
+    for(i = paymentSchedule.options.length-1 ; i >= 0 ; i--)// enquanto a quantidade opções no pagamento
     {
         paymentSchedule.remove(i);
     }
 
     //======================================================================================================
-
     // clear as checkboxes
     clear();
     clearResult();
@@ -36,392 +46,185 @@ function selectCourse(){
     
     if( courseSelected == "brpt12"){
 
-        var opcao = document.createElement("option");
-        opcao.value = "selectMehord";
-        opcao.text = "Payment Method";
+        createOptions("option","selectMehord","Payment Method",paymentMethod )
+
+        createOptions("option1", "creditCard","Credit Card",paymentMethod);        
         
-        var opcao1 = document.createElement("option");
-        opcao1.value = "creditCard";
-        opcao1.text = "Credit Card";
+        createOptions("option2","boleto","Boleto",paymentMethod)
 
-        var opcao2 = document.createElement("option");
-        opcao2.value = "boleto";
-        opcao2.text = "Boleto";
+        createOptions("option3","bankTransfer","Bank Transfer",paymentMethod )
 
-        var opcao3 = document.createElement("option");
-        opcao3.value = "bankTransfer";
-        opcao3.text = "Bank Transfer";
-
-        var opcao4 = document.createElement("option");
-        opcao4.value = "paypalPagsguro";
-        opcao4.text = "PayPal / PagSeguro";
-
-        paymentMethod.add(opcao);
-        paymentMethod.add(opcao1);
-        paymentMethod.add(opcao2);
-        paymentMethod.add(opcao3);
-        paymentMethod.add(opcao4);
-
+        createOptions("option3","paypalPagsguro","PayPal / PagSeguro",paymentMethod );
 
     } else if (courseSelected == "brpt24"){
 
-        var opcao = document.createElement("option");
-        opcao.value = "selectMethod";
-        opcao.text = "Payment Method";
+        createOptions("option","selectMethod","Payment Method", paymentMethod);
+
+        createOptions("option1","creditCard","Credit Card", paymentMethod);
         
-        var opcao11 = document.createElement("option");
-        opcao11.value = "creditCard";
-        opcao11.text = "Credit Card";
-
-        var opcao12 = document.createElement("option");
-        opcao12.value = "boleto";
-        opcao12.text = "Boleto";
-
-        var opcao13 = document.createElement("option");
-        opcao13.value = "bankTransfer";
-        opcao13.text = "Bank Transfer";
-
-        var opcao14 = document.createElement("option");
-        opcao14.value = "paypalPagsguro";
-        opcao14.text = "Paypal / PagSeguro";
-
-        paymentMethod.add(opcao);
-        paymentMethod.add(opcao11);
-        paymentMethod.add(opcao12);
-        paymentMethod.add(opcao13);
-        paymentMethod.add(opcao14);
-
+        createOptions("option2","boleto","Boleto", paymentMethod);
+        
+        createOptions("option3","bankTransfer","Bank Transfer",paymentMethod);
+        
+        createOptions("option4","paypalPagsguro","Paypal / PagSeguro", paymentMethod);
+        
     } else if (courseSelected == "brpt48"){
 
-        var opcao = document.createElement("option");
-        opcao.value = "selectMehord";
-        opcao.text = "Payment Method";
+        createOptions("option","selectMethod","Payment Method", paymentMethod);
+
+        createOptions("option1","creditCard","Credit Card", paymentMethod);
         
-        var opcao21 = document.createElement("option");
-        opcao21.value = "creditCard";
-        opcao21.text = "Credit Card";
-
-        var opcao22 = document.createElement("option");
-        opcao22.value = "boleto";
-        opcao22.text = "Boleto";
-
-        var opcao23 = document.createElement("option");
-        opcao23.value = "bankTransfer";
-        opcao23.text = "Bank Transfer";
-
-        var opcao24 = document.createElement("option");
-        opcao24.value = "paypalPagsguro";
-        opcao24.text = "PayPal / PagSeguro";
-
-        paymentMethod.add(opcao);
-        paymentMethod.add(opcao21);
-        paymentMethod.add(opcao22);
-        paymentMethod.add(opcao23);
-        paymentMethod.add(opcao24);
+        createOptions("option2","boleto","Boleto", paymentMethod);
+        
+        createOptions("option3","bankTransfer","Bank Transfer",paymentMethod);
+        
+        createOptions("option4","paypalPagsguro","Paypal / PagSeguro", paymentMethod);
         
     } else if (courseSelected == "brpt100") {
 
-        var opcao = document.createElement("option");
-        opcao.value = "selectMehord";
-        opcao.text = "Payment Method";
+        createOptions("option","selectMethod","Payment Method", paymentMethod);
+
+        createOptions("option1","creditCard","Credit Card", paymentMethod);
         
-        var opcao31 = document.createElement("option");
-        opcao31.value = "creditCard";
-        opcao31.text = "Credit Card";
-
-        var opcao32 = document.createElement("option");
-        opcao32.value = "boleto";
-        opcao32.text = "Boleto";
-
-        var opcao33 = document.createElement("option");
-        opcao33.value = "bankTransfer";
-        opcao33.text = "Bank Transfer";
-
-        var opcao34 = document.createElement("option");
-        opcao34.value = "paypalPagsguro";
-        opcao34.text = "PayPal / PagSeguro";
-
-        paymentMethod.add(opcao);
-        paymentMethod.add(opcao31);
-        paymentMethod.add(opcao32);
-        paymentMethod.add(opcao33);
-        paymentMethod.add(opcao34);
+        createOptions("option2","boleto","Boleto", paymentMethod);
+        
+        createOptions("option3","bankTransfer","Bank Transfer",paymentMethod);
+        
+        createOptions("option4","paypalPagsguro","Paypal / PagSeguro", paymentMethod);
     }
-//===============================================================
-//              payment schedule
-
 }
+//======================================================================================================
+//                                         payment schedule
+//                 ***** Cria o Payment Schedule apos selecionr o Payment Method *****
+//======================================================================================================    
 
-//================================================================================
-//================================================================================
-//  ***** Cria o Payment Schedule apos selecionr o Payment Method *****
+
 function selectMethod(){
     
     var paymentMethod = document.getElementById("paymentMethod");
     var paymentSchedule = document.getElementById("paymentSchedule");
-
     var paymentSelected = paymentMethod.options[paymentMethod.selectedIndex].value;
     //======================================================================================================
-//                             clear o Payment Schedule seja alterado
-    var paymentLength = paymentSchedule.options.length; //quantidade recebe a quantidade de opções no pagamento
+    //                             clear o Payment Schedule seja alterado
+
     var i; // cria a variavel i
-    for(i = paymentSchedule.options.length-1 ; i >= 0 ; i--) // enquanto a quantidade opções no pagamento
+    for(i = paymentSchedule.options.length-1 ; i >= 0 ; i--)    // enquanto a quantidade opções no pagamento
     {
         paymentSchedule.remove(i);
     }
 
     //======================================================================================================
-    //                  clear as Checkbox da pagina
+    //                               clear as Checkbox da pagina
     clear();
     clearResult();
 
     if( paymentSelected == "creditCard"){
 
-        var opcao = document.createElement("option");
-        opcao.value = "selectPayment";
-        opcao.text = "Payment Schedule";
+        createOptions("option","selectPayment","Payment Schedule",paymentSchedule);
 
-        var opcao1 = document.createElement("option");
-        opcao1.value = "Automatic";
-        opcao1.text = "Automatic";
+        createOptions("option1","Automatic","Automatic",paymentSchedule);
 
-        var opcao2 = document.createElement("option");
-        opcao2.value = "Manual";
-        opcao2.text = "Manual";
-
-        var opcao3 = document.createElement("option");
-        opcao3.value = "Single";
-        opcao3.text = "Single";
-
-        var opcao4 = document.createElement("option");
-        opcao4.value = "semiAutomatic";
-        opcao4.text = "Semi Automatic";
-
-        paymentSchedule.add(opcao);
-        paymentSchedule.add(opcao1);
-        paymentSchedule.add(opcao2);
-        paymentSchedule.add(opcao3);
-        paymentSchedule.add(opcao4);
-
-
+        createOptions("option2","Manual","Manual",paymentSchedule);
+        
+        createOptions("option3","Single","Single",paymentSchedule);
+        
+        createOptions("option4","semiAutomatic","Semi Automatic",paymentSchedule)
+        
     } else if (paymentSelected == "boleto"){
 
-        var opcao = document.createElement("option");
-        opcao.value = "selectPayment";
-        opcao.text = "Payment Schedule";
+        createOptions("option","selectPayment", "Payment Schedule",paymentSchedule);
 
-        var opcao11 = document.createElement("option");
-        opcao11.value = "boletoManual";
-        opcao11.text = "Manual";
+        createOptions("option1","boletoManual","Manual",paymentSchedule);
 
-        var opcao12 = document.createElement("option");
-        opcao12.value = "boletoSingle";
-        opcao12.text = "Single";
-
-
-        paymentSchedule.add(opcao);
-        paymentSchedule.add(opcao11);
-        paymentSchedule.add(opcao12);
+        createOptions("option2","boletoSingle","Single",paymentSchedule);
 
     } else if (paymentSelected == "bankTransfer"){
 
-        var opcao = document.createElement("option");
-        opcao.value = "selectPayment";
-        opcao.text = "Payment Schedule";
+        createOptions("option", "selectPayment","Payment Schedule",paymentSchedule);
 
-        var opcao21 = document.createElement("option");
-        opcao21.value = "Single";
-        opcao21.text = "Single";
-
-
-        paymentSchedule.add(opcao);
-        paymentSchedule.add(opcao21);
-
-        
+        createOptions("option1","Single","Single",paymentSchedule);
+  
     } else if (paymentSelected == "paypalPagsguro") {
 
-        var opcao = document.createElement("option");
-        opcao.value = "selectPayment";
-        opcao.text = "Payment Schedule";
+        createOptions("option","selectPayment","Payment Schedule",paymentSchedule);
 
-        var opcao31 = document.createElement("option");
-        opcao31.value = "Automatic";
-        opcao31.text = "Automatic";
+        createOptions("option1","Automatic","Automatic",paymentSchedule);
 
-        var opcao32 = document.createElement("option");
-        opcao32.value = "Single";
-        opcao32.text = "Single";
-
-        paymentSchedule.add(opcao);
-        paymentSchedule.add(opcao31);
-        paymentSchedule.add(opcao32);
-
+        createOptions("option2","Single","Single",paymentSchedule);
+        
     }
 }
-//================================================================================
-//================================================================================
-// ***** Cria as Check Box com as ofertas *****
+//======================================================================================================
+//                                            Checkbox    
+//                         ***** Cria as Check Box com as ofertas *****
+//======================================================================================================
 
+
+function insertCheckBox(bonus, input, text){                        // Função para criar novas Checkbox
+    var bonusPL = document.getElementById(bonus);   // seleciona o elemento pai
+    var checkBoxe = document.createElement("input");//cria o elemento e seleciona o atribudo checkbox
+    checkBoxe.setAttribute("type", "checkbox");     // define como Checkbox o input criado
+    checkBoxe.setAttribute("id",input);             // adiciona um ID na checkbox criada
+    var nome = document.createElement("label");     // Adiciona o elemento para adicionar o texto no checkbox
+    nome.textContent = text;                        // Insere o texto no elemento criado
+    bonusPL.appendChild(checkBoxe);                 // Coloca o CheckBox no elemento Pai   
+    bonusPL.appendChild(nome)                       // Atribui o texto no id
+
+}
 
 // ***** Ofertas Base *****
+
 function bonusPL(){
-    // seleciona o elemento pai
-    var bonusPL = document.getElementById("bonusPL");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputbonusPL");
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Dobro de PLs"
-    // Coloca o CheckBox no elemento Pai
-    bonusPL.appendChild(checkBoxe);
-    // Atribui o texto 
-    bonusPL.appendChild(nome)
 
-
+    insertCheckBox("bonusPL", "inputbonusPL", "Dobro de PLs");   
 }
 function bonusMonths(){
-    // seleciona o elemento pai
-    var bonusMonths = document.getElementById("bonusMonths");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputbonusMonths");
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Extensão de 2 meses"
-    // Coloca o CheckBox no elemento Pai
-    bonusMonths.appendChild(checkBoxe);
-    // Atribui o texto 
-    bonusMonths.appendChild(nome)
 
-
+    insertCheckBox("bonusMonths", "inputbonusMonths", "Extensão de 2 meses"); 
 }
 function bonusRescue(){
-    // seleciona o elemento pai
-    var bonusRescue = document.getElementById("bonusRescue");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputbonusRescue");
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Resgate de PLs"
-    // Coloca o CheckBox no elemento Pai
-    bonusRescue.appendChild(checkBoxe);
-    // Atribui o texto 
-    bonusRescue.appendChild(nome)
+
+    insertCheckBox("bonusRescue","inputbonusRescue", "Resgate de PLs");
 }
 function bonus50(){
-    var bonus50 = document.getElementById("bonus50");
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id", "inputbonus50");
-    var nome = document.createElement("label");
-    nome.textContent = "Desconto de 40 a 50%"
-    bonus50.appendChild(checkBoxe);
-    bonus50.appendChild(nome)
-}
 
+    insertCheckBox("bonus50", "inputbonus50","Desconto de 40 a 50%" );
+}
 function offersBase(){
 
     bonusPL();
     bonusMonths();
     bonusRescue();
-    bonus50()
-    
+    bonus50();
 }
 
 // ***** Ofertas sazonais *****
 
 function offer10(){
-    // seleciona o elemento pai
-    var offer10 = document.getElementById("offer10");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputOffer10");
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Multa de 10%"
-    // Coloca o CheckBox no elemento Pai
-    offer10.appendChild(checkBoxe);
-    // Atribui o texto 
-    offer10.appendChild(nome)
+
+    insertCheckBox("offer10","inputOffer10","Multa de 10%" );
 }
 function offer10da(){
-    // seleciona o elemento pai
-    var offer10da = document.getElementById("offer10da");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id", "inputOffer10da")
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Multa de 10%"
-    // Coloca o CheckBox no elemento Pai
-    offer10da.appendChild(checkBoxe);
-    // Atribui o texto 
-    offer10da.appendChild(nome)
+
+    insertCheckBox("offer10da","inputOffer10da","Multa de 10%");
 }
 function bonus1real(){
-    // seleciona o elemento pai
-    var bonus1real = document.getElementById("bonus1real");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputBonus1real")
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Primeira de R$1"
-    // Coloca o CheckBox no elemento Pai
-    bonus1real.appendChild(checkBoxe);
-    // Atribui o texto 
-    bonus1real.appendChild(nome)
+
+    insertCheckBox("bonus1real","inputBonus1real","Primeira de R$1");
 }
 function offer12x(){
-    // seleciona o elemento pai
-    var offer12x = document.getElementById("offer12x");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputOffer12x")
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Boleto em mais de 10x";
-    // Coloca o CheckBox no elemento Pai
-    offer12x.appendChild(checkBoxe);
-    // Atribui o texto 
-    offer12x.appendChild(nome)
+
+    insertCheckBox("offer12x","inputOffer12x","Boleto em mais de 10x");
 }
 function offerPoints(){
-    // seleciona o elemento pai
-    var offerPoints = document.getElementById("offerPoints");
-    //cria o elemento e seleciona o atribudo checkbox
-    var checkBoxe = document.createElement("input");
-    checkBoxe.setAttribute("type", "checkbox");
-    checkBoxe.setAttribute("id","inputofferPoints")
-    // Adiciona o elemento para adicionar o texto no checkbox
-    var nome = document.createElement("label");
-    // Insere o texto no elemento criado
-    nome.textContent = "Pontos do Portal";
-    // Coloca o CheckBox no elemento Pai
-    offerPoints.appendChild(checkBoxe);
-    // Atribui o texto 
-    offerPoints.appendChild(nome)
-}
 
-//================================================================================
-//================================================================================
-//  ***** Compara Curso e Pagamento (Mostra as Checkbox ) *****
+    insertCheckBox("offerPoints","inputofferPoints","Pontos do Portal");
+}
+//======================================================================================================
+//                  ***** Compara Curso e Pagamento (Mostra as Checkbox ) *****
+//======================================================================================================
+
+
 function offerCourse(){
 
     var course = document.getElementById("course").value;
@@ -438,7 +241,6 @@ function offerCourse(){
         offersBase();
         offer10();
         offerPoints();
-        
 
     break
         case "brpt12_creditCard_Manual":
@@ -461,7 +263,6 @@ function offerCourse(){
         offersBase();
         offer10da();
         offerPoints();
-        
 
     break
         case "brpt12_boleto_boletoManual":
@@ -499,14 +300,13 @@ function offerCourse(){
         offer10();
         offerPoints();
 
-        // aqui terminar o ciclo de condições
     break
         case "brpt24_creditCard_Automatic":
 
         offersBase();
         offer10();
         offerPoints();
- 
+
     break
         case "brpt24_creditCard_Manual":
 
@@ -528,7 +328,7 @@ function offerCourse(){
         offersBase();
         offer10da();
         offerPoints();
-  
+
     break
         case "brpt24_boleto_boletoManual":
 
@@ -536,21 +336,20 @@ function offerCourse(){
         offer10da();
         offer12x();
         offerPoints();
-  
+
     break
         case "brpt24_boleto_boletoSingle":
 
         offersBase();
         offer10();
         offerPoints();
- 
+
     break
         case "brpt24_bankTransfer_Single":
 
         offersBase();
         offer10();
         offerPoints();
-
 
     break
         case "brpt24_paypalPagsguro_Automatic":
@@ -566,7 +365,6 @@ function offerCourse(){
         offer10();
         offerPoints();
 
-        // aqui terminar o ciclo de condições
     break
         case "brpt48_creditCard_Automatic":
 
@@ -611,7 +409,6 @@ function offerCourse(){
         offer10();
         offerPoints();
 
-
     break
         case "brpt48_bankTransfer_Single":
 
@@ -633,7 +430,6 @@ function offerCourse(){
         offer10();
         offerPoints();
 
-        // aqui terminar o ciclo de condições
     break
         case "brpt100_creditCard_Automatic":
 
@@ -699,16 +495,17 @@ function offerCourse(){
         offer10();
         offerPoints();
 
-        // aqui terminar o ciclo de condições
     break
 
     }
     
 }
 
-//================================================================================
-//================================================================================
-// Mensagem de autorizado ou não autorizado
+//======================================================================================================
+//                          Mensagem de autorizado ou não autorizado
+//======================================================================================================
+
+
 function notPass(valide, textValide){           //Mostra o texto Oferta Invalida
 
     textValide.setAttribute("class", "invalidPass")
@@ -726,6 +523,12 @@ function Pass(valide){                         // Mostra o texto Oferta Valida
 
     valide.appendChild(textValide);
 } 
+
+//======================================================================================================
+//                     Valida os itens selecionados na checkbox e compara as ofertas
+//======================================================================================================
+
+
 function createH3(textId, textValue){          // cria texto com o motivo 
 
     var createText = document.createElement("h3");
@@ -733,14 +536,9 @@ function createH3(textId, textValue){          // cria texto com o motivo
     textId.appendChild(createText);
 
 } 
-//================================================================================
-//================================================================================
-// Valida os itens selecionados na checkbox e compara as ofertas
 
 function validateAutomtic(){
-    // limpa os resultados anteriores
-    clearResult();
-    
+    clearResult();  // limpa os resultados anteriores
     var bonusPL = document.getElementById("inputbonusPL").checked;     // Verifica quais checkbox são "true"
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
     var bonusMonths = document.getElementById("inputbonusMonths").checked;
@@ -784,12 +582,12 @@ function validateManual(){
     clearResult();  
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
-    var bonusMonths = document.getElementById("inputbonusMonths").checked;
-    
+    var bonusMonths = document.getElementById("inputbonusMonths").checked;  
     var offer10da = document.getElementById("inputOffer10da").checked;
     var bonus1real = document.getElementById("inputBonus1real").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
     var bonus50 = document.getElementById("inputbonus50").checked;
+
 
     var textId = document.getElementById("validateResult");
 
@@ -844,11 +642,11 @@ function validateSingle(){
     clearResult();
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
-    var bonusMonths = document.getElementById("inputbonusMonths").checked;
-    
+    var bonusMonths = document.getElementById("inputbonusMonths").checked;  
     var offer10 = document.getElementById("inputOffer10").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
     var bonus50 = document.getElementById("inputbonus50").checked;
+
 
     var textId = document.getElementById("validateResult");
 
@@ -887,10 +685,10 @@ function validateSemiauto (){
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
     var bonusMonths = document.getElementById("inputbonusMonths").checked;
-
     var offer10da = document.getElementById("inputOffer10da").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
     var bonus50 = document.getElementById("inputbonus50").checked;
+
 
     var textId = document.getElementById("validateResult");
 
@@ -927,22 +725,21 @@ function validateSemiauto (){
         valid = false;
     }      
     if(valid){
-        Pass();
+        Pass(valide);
     }   
 
 }
 
 function validateBoletoManual(){
-
     clearResult();  
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
     var bonusMonths = document.getElementById("inputbonusMonths").checked;
-    
     var offer10da = document.getElementById("inputOffer10da").checked;
     var offer12x = document.getElementById("inputOffer12x").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
     var bonus50 = document.getElementById("inputbonus50").checked;
+
 
     var textId = document.getElementById("validateResult");
 
@@ -983,11 +780,15 @@ function validateBoletoManual(){
         notPass(valide, textValide);   
         valid = false;
     }
+    if(valid){
+        Pass(valide);
+    }  
 
 }
-//================================================================================
-//================================================================================
-// Verifica qual Schedule do pagamento e seleciona a validação correta de checkbox
+//======================================================================================================
+//          Verifica qual Schedule do pagamento e seleciona a validação correta de checkbox
+//======================================================================================================
+
 function validateSchedule(){
     var paymentSchedule = document.getElementById("paymentSchedule").value;
     
@@ -1008,9 +809,9 @@ function validateSchedule(){
         validateBoletoManual()
     }
 }
-//================================================================================
-//================================================================================
-//  ***** Apaga as checkBox das tela *****
+//======================================================================================================
+//                          ***** Apaga as checkBox das tela *****
+//======================================================================================================
 
 function clear(){
     document.getElementById("bonusPL").innerHTML = "";

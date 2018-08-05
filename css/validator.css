@@ -13,15 +13,22 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
 }
 .case {
-    width: 50em;
-    height: 5em;
+    width:35em;
+    height: 3.5em; 
     display: flex;
     margin: 10%;
+    font-size: 1em;
+    text-align: center; 
+    color: #003F5F;
+    font-weight: bold;
 }
+
 .smallCase{
     display: inline-block;
     width: 24.75em;
     height: 5em;
+    color:#003F5F;  
+    font-weight: bold;
 }
 .bonusOffer{
     display: table;
