@@ -1,3 +1,6 @@
+.logoPrincipal img{
+    width: 50em;
+}
 .logoPrincipal{
     display: table;
     margin: 0 auto;

@@ -12,12 +12,27 @@ body{
     position: relative;
     height: 100%;
 }
+.logo img{
+    width: 450px;
+}
 .logo{
-    
     display: table;
     margin: 0 auto;
     padding-bottom: 1em;
+    
+    opacity: 1;
+    animation: fadeIn 1s ease;
+
 }
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 
 .logoNavbar{
     content: url(../images/logoenglishlive.png);
