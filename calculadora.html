@@ -28,16 +28,21 @@
     </nav>
 
     <div class="valueInput container" id="valueInput">
-        <input type="number" class="finalPrice" id="finalPrice" placeholder="Digite o valor"  >
+        <input type="number" class="finalPrice" id="finalPrice" placeholder="Digite o Final Price"  >
     </div>  
     <div class="container" id="buttonInput">
-        <button class="buttonInput" onclick="percentage12()">PT 12 PL</button>
-        <button class="buttonInput"onclick="percentage24()">PT 24 PL</button>
-        <button class="buttonInput"onclick="percentage48()">PT 48 PL</button>
-        <button class="buttonInput"onclick="percentage100()">PT 100 PL</button>
+        <button class="buttonInput" onclick="calculate_smart()">Smart </button>
+        <button class="buttonInput" onclick="calculate_bussines()">Business </button>
+        <button class="buttonInput" onclick="calculate_12pl()">PT 12 PL</button>
+        <button class="buttonInput"onclick="calculate_24pl()">PT 24 PL</button>
+        <button class="buttonInput"onclick="calculate_48pl()">PT 48 PL</button>
+        <button class="buttonInput"onclick="calculate_100pl()">PT 100 PL</button>
     </div>
     <div>
-        <p class="result container"id="result"></p>
+        <span class="result container"id="result"></span>
+    </div>
+    <div>
+        <span class="installment container"id="paymentInstallments"></span>
     </div>
     <footer>
             Created by Roberto Guerra

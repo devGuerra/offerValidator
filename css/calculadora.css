@@ -32,10 +32,9 @@ input[type="number"]{
     color: #003F5F;
 }
 .result{
-    font-size: 2.5em
+    font-size: 2.5em;
+    padding-top: 2.5%;
 }
-
-
 .validePass{
     color: green;
     font-size: 180%;
@@ -50,9 +49,10 @@ input[type="number"]{
     margin: 0 auto;
     padding-top: 2.5%
 }
-.result{
-    padding-top: 2.5%;
+.installment{
+    margin-top: 2em;
 }
+
 
 
 

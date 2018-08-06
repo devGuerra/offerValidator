@@ -1,33 +1,35 @@
-function getPorcentage(finalPrice, basePrice12){ 
-    var priceDiscount = basePrice12 - finalPrice;   
-    var percentageDiscount = (priceDiscount / basePrice12) * 100;
-    document.getElementById("result").innerHTML = percentageDiscount.toFixed(0)+"% de desconto";
+function  calculateInstallment(priceBase){     
+    var finalPrice = document.getElementById("finalPrice").value;                                               // Pega o valor do final price 
+
+    var priceDiscount = priceBase - finalPrice;                                                                 // Calcula o valor o do desconto
+    var percentageDiscount = (priceDiscount / priceBase) * 100;  
+
+    if(percentageDiscount < 0 ){                                                                                // Mostra mensaga de acrescimo no valor
+        document.getElementById("result").innerHTML = Math.abs(percentageDiscount).toFixed(0)+"% de ACRÉSCIMO";
+    } else{
+        document.getElementById("result").innerHTML = percentageDiscount.toFixed(0)+"% de DESCONTO";
+    }                
+                                               
+    var installment = finalPrice / 12;                                                                          // Calcula o parcelamento do final price por 12
+    document.getElementById("paymentInstallments").innerHTML = "12 parcelas de R$ "+ installment.toFixed(2);    // Mostra o valor do parcelamento na tela
+
 }
 
-
-
-function percentage12(){
-    var finalPrice = document.getElementById("finalPrice").value;
-    var basePrice12 = 3096;
-
-    getPorcentage(finalPrice, basePrice12);
+function calculate_smart(){
+    calculateInstallment(684);
 }
-function percentage24(){
-    var finalPrice = document.getElementById("finalPrice").value;
-    var basePrice24 = 3576;
-
-    getPorcentage(finalPrice, basePrice24);
+function calculate_bussines(){
+    calculateInstallment(1449);
 }
-function percentage48(){
-    var finalPrice = document.getElementById("finalPrice").value;
-    var basePrice48 = 4248;
-
-    getPorcentage(finalPrice, basePrice48);
+function calculate_12pl(){    
+    calculateInstallment(3096);
 }
-function percentage100(){
-    var finalPrice = document.getElementById("finalPrice").value;
-    var basePrice100 = 5544;
-
-    getPorcentage(finalPrice, basePrice100);
-    
+function calculate_24pl(){
+    calculateInstallment(3576);
+}
+function calculate_48pl(){
+    calculateInstallment(4248);  
+}
+function calculate_100pl(){
+    calculateInstallment(5544)  ;
 }
