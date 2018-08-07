@@ -18,26 +18,26 @@
         <img src="images/logo-englishlive-validator.png" alt="logo english live" onclick="reloadPage()">
     </div>
 
-    <nav class="navbar">
+    <div class="navbar">
         <div class="logoNavbar"></div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="validator.html">Validador</a></li>
             <li><a href="calculadora.html">Calculadora</a></li>
         </ul>
-    </nav>
+    </div>
 
-    <div class="valueInput container" id="valueInput">
+    <div class="valueInput" id="valueInput">
         <input type="number" class="finalPrice" id="finalPrice" placeholder="Digite o Final Price"  >
     </div>  
-    <div class="container" id="buttonInput">
+    <ul class="container" id="buttonInput">
         <button class="buttonInput" onclick="calculate_smart()">Smart </button>
         <button class="buttonInput" onclick="calculate_bussines()">Business </button>
         <button class="buttonInput" onclick="calculate_12pl()">PT 12 PL</button>
         <button class="buttonInput"onclick="calculate_24pl()">PT 24 PL</button>
         <button class="buttonInput"onclick="calculate_48pl()">PT 48 PL</button>
         <button class="buttonInput"onclick="calculate_100pl()">PT 100 PL</button>
-    </div>
+    </ul>
     <div>
         <span class="result container"id="result"></span>
     </div>

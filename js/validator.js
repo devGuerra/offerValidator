@@ -557,7 +557,13 @@ function validateAutomtic(){
 
     if (bonusPL && bonusRescue == true ){         // Verifica qual a combinação e exibe uma mensagem para o usuario
 
-        createH3( textId,  "- PL bonus com Resgate, não autorizado");
+        createH3( textId,  "- Dobro de Aulas com Resgate, não autorizado");
+        notPass(valide, textValide);   
+        valid = false;
+    }
+    if (bonusPL && bonusMonths == true ){         // Verifica qual a combinação e exibe uma mensagem para o usuario
+
+        createH3( textId,  "- Dobro de Aulas com Meses Bonus, não autorizado");
         notPass(valide, textValide);   
         valid = false;
     }
@@ -600,10 +606,16 @@ function validateManual(){
 
     if ( bonusPL && bonusRescue == true){
 
-        createH3(textId,"- Oferta de PL bonus e Resgate não autorizada" )
+        createH3(textId,"-  Dobro de Aulas e Resgate não autorizada" )
         notPass(valide, textValide);
         valid = false;
 
+    }
+    if (bonusPL && bonusMonths == true ){         // Verifica qual a combinação e exibe uma mensagem para o usuario
+
+        createH3( textId,  "- Dobro de Aulas com Meses Bonus, não autorizado");
+        notPass(valide, textValide);   
+        valid = false;
     } 
     if  ( offer10da == true){
 
@@ -659,7 +671,13 @@ function validateSingle(){
 
     if (bonusPL && bonusRescue == true ){
 
-        createH3(textId,"- Oferta de PL bonus e Resgate não autorizada");
+        createH3(textId,"-  Dobro de Aulas e Resgate não autorizada");
+        notPass(valide, textValide);   
+        valid = false;
+    }
+    if (bonusPL && bonusMonths == true ){         // Verifica qual a combinação e exibe uma mensagem para o usuario
+
+        createH3( textId,  "- Dobro de Aulas com Meses Bonus, não autorizado");
         notPass(valide, textValide);   
         valid = false;
     }
@@ -702,10 +720,16 @@ function validateSemiauto (){
 
     if ( bonusPL && bonusRescue == true){          
         
-        createH3(textId,"- Oferta de PL bonus e Resgate não autorizada");
+        createH3(textId,"-  Dobro de Aulas e Resgate não autorizada");
         notPass(valide, textValide);   
         valid = false;
     } 
+    if (bonusPL && bonusMonths == true ){         // Verifica qual a combinação e exibe uma mensagem para o usuario
+
+        createH3( textId,  "- Dobro de Aulas com Meses Bonus, não autorizado");
+        notPass(valide, textValide);   
+        valid = false;
+    }
     if  ( offer10da == true){
 
         createH3(textId,"- Ofertas de 10% no manual apenas com DA");
@@ -752,10 +776,16 @@ function validateBoletoManual(){
 
     if ( bonusPL && bonusRescue == true){
 
-        createH3(textId,"- Oferta de PL bonus e Resgate não autorizada");   
+        createH3(textId,"- Dobro de Aulas e Resgate não autorizada");   
         notPass(valide, textValide);   
         valid = false;   
     } 
+    if (bonusPL && bonusMonths == true ){         // Verifica qual a combinação e exibe uma mensagem para o usuario
+
+        createH3( textId,  "- Dobro de Aulas com Meses Bonus, não autorizado");
+        notPass(valide, textValide);   
+        valid = false;
+    }
     if  ( offer10da == true){
 
         createH3(textId,"- Ofertas de 10% no manual apenas com DA");

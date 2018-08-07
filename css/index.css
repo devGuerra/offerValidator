@@ -1,13 +1,13 @@
+
 .logoPrincipal img{
-    width: 50em;
-}
-.logoPrincipal{
     display: table;
     margin: 0 auto;
     padding-top: 15%;
-
+    width: 50%;
+    min-width: 15em;
     opacity: 1;
     animation: fadeIn 3s ease;
+
 
 }
 @keyframes fadeIn{
@@ -21,27 +21,21 @@
 
 .navbar{
     width:  1;
-    
-    animation: navDeslize 1s ease;
+    animation: logo 1s ease;    
 }
-@keyframes navDeslize{
-    0%{
-        width: 0;
-    }
-    100%{
-        width: 1;
-    }
-}
+
 .logoNavbarIndex{
-    height: 9em;
+    
+    width: 90%;
     display: block;
     margin: 0 auto;
     padding-top: 1em;   
     position: relative;
-    animation-name: logo;
-    animation-duration: 1s;
+    animation: logo 1s ease;
+
 }
 @keyframes logo{
-    0%{left: -200px; top: 0px}
+
+    0%{left: -100%; top: 0%}
     100%{left: 0px;top: 0px}
 }

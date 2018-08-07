@@ -15,8 +15,6 @@
 .case {
     width:35em;
     height: 3.5em; 
-    display: flex;
-    margin: 10%;
     font-size: 1em;
     text-align: center; 
     color: #003F5F;

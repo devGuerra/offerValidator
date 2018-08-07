@@ -3,14 +3,16 @@
     display: table;
     margin: 0 auto;
 }
-#finalPrice{
-
+.finalPrice{
+    display: table;
+    margin: 0 auto;
     border: 1px solid rgb(167, 167, 167);
     border-radius: 0.45em;    
     background-color: #f1e0e023;
-    width: 17.5em;
-    height: 1.75em; 
-    
+    width: 45%;
+    max-width: 45%;
+    min-width: 9em;
+  
 }
 input[type="number"]{
     font-size: 2em;
@@ -21,19 +23,26 @@ input[type="number"]{
 ::placeholder{
     color: rgba(0, 63, 95, 0.37);
 }
+#buttonInput{
+
+    justify-content: center;
+    text-align: center;
+}
 .buttonInput{
-    height: 3em;
-    width: 6em;
-    border: none;
+
+    height: 40px;
+    width: 7em;
     border: 1px solid rgb(167, 167, 167);
     border-radius: 0.25em;
-    background-color:#f1e0e04d;
-    margin: 1em;
+    background-color:#0000000e;
+    margin: 5px;
     color: #003F5F;
+    
 }
 .result{
     font-size: 2.5em;
     padding-top: 2.5%;
+    text-align: center;
 }
 .validePass{
     color: green;
