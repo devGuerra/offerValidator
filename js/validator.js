@@ -506,22 +506,14 @@ function offerCourse(){
 //======================================================================================================
 
 
-function notPass(valide, textValide){           //Mostra o texto Oferta Invalida
 
-    textValide.setAttribute("class", "invalidPass")
+function passpass(){                         // Mostra o texto Oferta Valida
+    var valide = document.getElementById("valideorNot");
 
-    textValide.textContent = "Oferta Inválida";
+    valide.setAttribute("class", "validePass")
 
-    valide.appendChild(textValide);
-}
-function Pass(valide){                         // Mostra o texto Oferta Valida
+    valide.textContent = "Oferta Válida";
 
-    var textValide = document.createElement("h3");
-    textValide.setAttribute("class", "validePass")
-
-    textValide.textContent = "Oferta Válida";
-
-    valide.appendChild(textValide);
 } 
 
 //======================================================================================================
@@ -529,15 +521,26 @@ function Pass(valide){                         // Mostra o texto Oferta Valida
 //======================================================================================================
 
 
-function createH3(textId, textValue){          // cria texto com o motivo 
-
+function reduzirValidador( valordoIf, textValue){
+    
+    var valide = document.getElementById("valideorNot");
+    var textId = document.getElementById("validateResult");
     var createText = document.createElement("h3");
-    createText.textContent = textValue;
-    textId.appendChild(createText);
+    
 
-} 
 
-function validateAutomtic(){
+    if ( valordoIf ){
+        valide.setAttribute("class", "invalidPass");
+        valide.textContent = "Oferta Inválida";
+
+        createText.textContent = textValue;
+        textId.appendChild(createText)
+
+    }
+
+}
+///////////////////////////////////////////////////////////////////////////////////
+function validateAutomatic(){
     clearResult();  // limpa os resultados anteriores
     var bonusPL = document.getElementById("inputbonusPL").checked;     // Verifica quais checkbox são "true"
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
@@ -545,43 +548,21 @@ function validateAutomtic(){
     var offer10 = document.getElementById("inputOffer10").checked;
     var offerPoints = document.getElementById("inputofferPoints").checked;
     var bonus50 = document.getElementById("inputbonus50").checked;
+    
+    var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints + bonus50;
 
-    var textId = document.getElementById("validateResult");
+    passpass();
 
-    var valide = document.getElementById("valideorNot");
-    var textValide = document.createElement("h3");
+    reduzirValidador(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
+
+    reduzirValidador(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
+
+    reduzirValidador(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
+
+    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" )
+
+
  
-    var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints + bonus50; // soma quantas checkbox foram selecionadas
-
-    var valid = true;
-
-    if (bonusPL && bonusRescue == true ){         // Verifica qual a combinação e exibe uma mensagem para o usuario
-
-        createH3( textId,  "- Dobro de Aulas com Resgate, não autorizado");
-        notPass(valide, textValide);   
-        valid = false;
-    }
-    if (bonusPL && bonusMonths == true ){         // Verifica qual a combinação e exibe uma mensagem para o usuario
-
-        createH3( textId,  "- Dobro de Aulas com Meses Bonus, não autorizado");
-        notPass(valide, textValide);   
-        valid = false;
-    }
-    if (offerPoints == true && offers >= 3){ 
-
-        createH3( textId,  "- Pontos do Portal com mais de uma Oferta");
-        notPass(valide, textValide);     
-        valid = false;
-    }
-    if(offerPoints && bonus50 == true && offers >= 3 ){
-
-        createH3( textId,  "- Pontos do Portal com mais de 40% de desconto");
-        notPass(valide,textValide)
-        valid = false;
-    }
-    if(valid){
-        Pass(valide); // mostra a mensagem de "AUTORIZADO" na tela
-    }  
 }
 
 function validateManual(){
@@ -594,60 +575,21 @@ function validateManual(){
     var offerPoints = document.getElementById("inputofferPoints").checked;
     var bonus50 = document.getElementById("inputbonus50").checked;
 
+    var offers = bonusPL + bonusRescue + bonusMonths + offer10da + bonus1real + offerPoints + bonus50;
 
-    var textId = document.getElementById("validateResult");
+    passpass();
 
-    var valide = document.getElementById("valideorNot");
-    var textValide = document.createElement("h3");
+    reduzirValidador(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
 
-    var offers = bonus50 + bonusPL +  bonusRescue +  bonusMonths +  offer10da +  bonus1real +  offerPoints;
+    reduzirValidador(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
 
-    valid = true;
+    reduzirValidador(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
 
-    if ( bonusPL && bonusRescue == true){
+    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" );
 
-        createH3(textId,"-  Dobro de Aulas e Resgate não autorizada" )
-        notPass(valide, textValide);
-        valid = false;
+    reduzirValidador(offerPoints && bonus1real,"- Pontos do Portal  + 1 real não autorizado" )
 
-    }
-    if (bonusPL && bonusMonths == true ){         // Verifica qual a combinação e exibe uma mensagem para o usuario
-
-        createH3( textId,  "- Dobro de Aulas com Meses Bonus, não autorizado");
-        notPass(valide, textValide);   
-        valid = false;
-    } 
-    if  ( offer10da == true){
-
-        createH3(textId,"- Multa de 10% no manual" )
-        notPass(valide, textValide);
-        valid = false;       
-   
-    }
-    if (offerPoints && bonus1real == true){
-
-        createH3(textId,"- Pontos do Portal  + 1 real não autorizado" )
-        notPass(valide, textValide);
-        valid = false; 
-  
-    } 
-    if (offerPoints == true && offers >= 3  ) {
-
-        createH3(textId,"- Pontos do Portal com mais de uma Oferta" )
-        notPass(valide, textValide);
-        valid = false; 
-
-    } 
-    if(offerPoints && bonus50 == true ){
-
-        createH3(textId,"- Pontos do Portal com mais de 40% de desconto" )
-        notPass(valide, textValide);
-        valid = false; 
-    }         
-    if(valid){
-        Pass(valide);
-    }
-
+    reduzirValidador(offer10da,"- Multa de 10% no manual" );
 }
 
 function validateSingle(){
@@ -659,43 +601,17 @@ function validateSingle(){
     var offerPoints = document.getElementById("inputofferPoints").checked;
     var bonus50 = document.getElementById("inputbonus50").checked;
 
-
-    var textId = document.getElementById("validateResult");
-
-    var valide = document.getElementById("valideorNot");
-    var textValide = document.createElement("h3");
-
-    var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints + bonus50;    
+    var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints + bonus50;
     
-    valid = true;
+    passpass();
+    
+    reduzirValidador(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
 
-    if (bonusPL && bonusRescue == true ){
+    reduzirValidador(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
 
-        createH3(textId,"-  Dobro de Aulas e Resgate não autorizada");
-        notPass(valide, textValide);   
-        valid = false;
-    }
-    if (bonusPL && bonusMonths == true ){         // Verifica qual a combinação e exibe uma mensagem para o usuario
+    reduzirValidador(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
 
-        createH3( textId,  "- Dobro de Aulas com Meses Bonus, não autorizado");
-        notPass(valide, textValide);   
-        valid = false;
-    }
-    if (offerPoints == true && offers >= 3){
-
-        createH3(textId,"- Pontos do Portal com mais de uma Oferta");       
-        notPass(valide, textValide);   
-        valid = false;
-    }
-    if(offerPoints && bonus50 == true ){
-        
-        createH3(textId,"- Pontos do Portal com mais de 40% de desconto");
-        notPass(valide, textValide);   
-        valid = false;
-    }
-    if(valid){
-        Pass(valide)
-    }  
+    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
 }
 
 function validateSemiauto (){
@@ -707,50 +623,20 @@ function validateSemiauto (){
     var offerPoints = document.getElementById("inputofferPoints").checked;
     var bonus50 = document.getElementById("inputbonus50").checked;
 
+    var offers = bonusPL + bonusRescue + bonusMonths + offer10da + offerPoints + bonus50; 
 
-    var textId = document.getElementById("validateResult");
+    passpass();
 
-    var valide = document.getElementById("valideorNot");
-    var textValide = document.createElement("h3");
+    reduzirValidador(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
 
-    var offers = bonusPL +  bonusRescue +  bonusMonths +  offer10da +  offerPoints + bonus50;
+    reduzirValidador(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
 
-    valid = true;
+    reduzirValidador(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
 
+    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
 
-    if ( bonusPL && bonusRescue == true){          
-        
-        createH3(textId,"-  Dobro de Aulas e Resgate não autorizada");
-        notPass(valide, textValide);   
-        valid = false;
-    } 
-    if (bonusPL && bonusMonths == true ){         // Verifica qual a combinação e exibe uma mensagem para o usuario
+    reduzirValidador(offer10da,"- Ofertas de 10% no manual apenas com DA" )
 
-        createH3( textId,  "- Dobro de Aulas com Meses Bonus, não autorizado");
-        notPass(valide, textValide);   
-        valid = false;
-    }
-    if  ( offer10da == true){
-
-        createH3(textId,"- Ofertas de 10% no manual apenas com DA");
-        notPass(valide, textValide);   
-        valid = false;;   
-    }
-    if (offerPoints == true && offers >= 3) {   
-
-        createH3(textId,"- Pontos do Portal com mais de uma Oferta");           
-        notPass(valide, textValide);   
-        valid = false;   
-    }    
-    if(offerPoints && bonus50 == true ){
-
-        createH3(textId, "- Pontos do Portal com mais de 40% de desconto");
-        notPass(valide, textValide);   
-        valid = false;
-    }      
-    if(valid){
-        Pass(valide);
-    }   
 
 }
 
@@ -772,47 +658,22 @@ function validateBoletoManual(){
 
     var offers = bonusPL +  bonusRescue +  bonusMonths +  offer10da +  offerPoints + offer12x;
 
-    valid = true;
+    passpass();
 
-    if ( bonusPL && bonusRescue == true){
+    reduzirValidador(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
 
-        createH3(textId,"- Dobro de Aulas e Resgate não autorizada");   
-        notPass(valide, textValide);   
-        valid = false;   
-    } 
-    if (bonusPL && bonusMonths == true ){         // Verifica qual a combinação e exibe uma mensagem para o usuario
+    reduzirValidador(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
 
-        createH3( textId,  "- Dobro de Aulas com Meses Bonus, não autorizado");
-        notPass(valide, textValide);   
-        valid = false;
-    }
-    if  ( offer10da == true){
+    reduzirValidador(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
 
-        createH3(textId,"- Ofertas de 10% no manual apenas com DA");
-        notPass(valide, textValide);   
-        valid = false;      
-    }
-    if (offer12x == true){
+    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
 
-        createH3(textId,"- Boleto com mais de 10 parcelas");
-        notPass(valide, textValide);   
-        valid = false;    
-    } 
-    if (offerPoints == true && offers >= 3) {
+    reduzirValidador(offer10da,"- Ofertas de 10% no manual apenas com DA");
 
-        createH3(textId, "- Pontos do Portal com mais de uma Oferta");
-        notPass(valide, textValide);   
-        valid = false;
-    }  
-    if(offerPoints && bonus50 == true ){
+    reduzirValidador(offer12x,"- Boleto com mais de 10 parcelas"); 
 
-        createH3(textId, "- Pontos do Portal com mais de 40% de desconto");
-        notPass(valide, textValide);   
-        valid = false;
-    }
-    if(valid){
-        Pass(valide);
-    }  
+
+
 
 }
 //======================================================================================================
@@ -824,7 +685,7 @@ function validateSchedule(){
     
     if ( paymentSchedule == "Automatic"){
 
-        validateAutomtic()
+        validateAutomatic()
     } else if (paymentSchedule == "Manual"){
 
         validateManual()
