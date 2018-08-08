@@ -507,7 +507,7 @@ function offerCourse(){
 
 
 
-function passpass(){                         // Mostra o texto Oferta Valida
+function offerAproved(){                         // Mostra o texto Oferta Valida
     var valide = document.getElementById("valideorNot");
 
     valide.setAttribute("class", "validePass")
@@ -521,7 +521,7 @@ function passpass(){                         // Mostra o texto Oferta Valida
 //======================================================================================================
 
 
-function reduzirValidador( valordoIf, textValue){
+function validateOffer( valordoIf, textValue){
     
     var valide = document.getElementById("valideorNot");
     var textId = document.getElementById("validateResult");
@@ -540,7 +540,7 @@ function reduzirValidador( valordoIf, textValue){
 
 }
 ///////////////////////////////////////////////////////////////////////////////////
-function validateAutomatic(){
+function validateOffersAutomatic(){
     clearResult();  // limpa os resultados anteriores
     var bonusPL = document.getElementById("inputbonusPL").checked;     // Verifica quais checkbox são "true"
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
@@ -551,21 +551,21 @@ function validateAutomatic(){
     
     var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints + bonus50;
 
-    passpass();
+    offerAproved();
 
-    reduzirValidador(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
+    validateOffer(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
 
-    reduzirValidador(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
+    validateOffer(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
 
-    reduzirValidador(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
+    validateOffer(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
 
-    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" )
+    validateOffer(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" )
 
 
  
 }
 
-function validateManual(){
+function validateOffersManual(){
     clearResult();  
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
@@ -577,22 +577,22 @@ function validateManual(){
 
     var offers = bonusPL + bonusRescue + bonusMonths + offer10da + bonus1real + offerPoints + bonus50;
 
-    passpass();
+    offerAproved();
 
-    reduzirValidador(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
+    validateOffer(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
 
-    reduzirValidador(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
+    validateOffer(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
 
-    reduzirValidador(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
+    validateOffer(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
 
-    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" );
+    validateOffer(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" );
 
-    reduzirValidador(offerPoints && bonus1real,"- Pontos do Portal  + 1 real não autorizado" )
+    validateOffer(offerPoints && bonus1real,"- Pontos do Portal  + 1 real não autorizado" )
 
-    reduzirValidador(offer10da,"- Multa de 10% no manual" );
+    validateOffer(offer10da,"- Multa de 10% no manual" );
 }
 
-function validateSingle(){
+function validateOffersSingle(){
     clearResult();
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
@@ -603,18 +603,18 @@ function validateSingle(){
 
     var offers = bonusPL + bonusRescue + bonusMonths + offer10 + offerPoints + bonus50;
     
-    passpass();
+    offerAproved();
     
-    reduzirValidador(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
+    validateOffer(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
 
-    reduzirValidador(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
+    validateOffer(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
 
-    reduzirValidador(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
+    validateOffer(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
 
-    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
+    validateOffer(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
 }
 
-function validateSemiauto (){
+function validateOffersSemiauto (){
     clearResult();
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
@@ -625,22 +625,21 @@ function validateSemiauto (){
 
     var offers = bonusPL + bonusRescue + bonusMonths + offer10da + offerPoints + bonus50; 
 
-    passpass();
+    offerAproved();
 
-    reduzirValidador(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
+    validateOffer(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
 
-    reduzirValidador(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
+    validateOffer(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
 
-    reduzirValidador(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
+    validateOffer(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
 
-    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
+    validateOffer(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
 
-    reduzirValidador(offer10da,"- Ofertas de 10% no manual apenas com DA" )
-
+    validateOffer(offer10da,"- Ofertas de 10% no manual apenas com DA" )
 
 }
 
-function validateBoletoManual(){
+function validateOffersBoletoManual(){
     clearResult();  
     var bonusPL = document.getElementById("inputbonusPL").checked;
     var bonusRescue = document.getElementById("inputbonusRescue").checked;
@@ -650,7 +649,6 @@ function validateBoletoManual(){
     var offerPoints = document.getElementById("inputofferPoints").checked;
     var bonus50 = document.getElementById("inputbonus50").checked;
 
-
     var textId = document.getElementById("validateResult");
 
     var valide = document.getElementById("valideorNot");
@@ -658,22 +656,19 @@ function validateBoletoManual(){
 
     var offers = bonusPL +  bonusRescue +  bonusMonths +  offer10da +  offerPoints + offer12x;
 
-    passpass();
+    offerAproved();
 
-    reduzirValidador(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
+    validateOffer(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
 
-    reduzirValidador(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
+    validateOffer(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
 
-    reduzirValidador(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
+    validateOffer(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
 
-    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
+    validateOffer(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
 
-    reduzirValidador(offer10da,"- Ofertas de 10% no manual apenas com DA");
+    validateOffer(offer10da,"- Ofertas de 10% no manual apenas com DA");
 
-    reduzirValidador(offer12x,"- Boleto com mais de 10 parcelas"); 
-
-
-
+    validateOffer(offer12x,"- Boleto com mais de 10 parcelas"); 
 
 }
 //======================================================================================================
@@ -685,19 +680,19 @@ function validateSchedule(){
     
     if ( paymentSchedule == "Automatic"){
 
-        validateAutomatic()
+        validateOffersAutomatic()
     } else if (paymentSchedule == "Manual"){
 
-        validateManual()
+        validateOffersManual()
     } else if(paymentSchedule == "Single"|| paymentSchedule == "boletoSingle"  ){
 
-        validateSingle()
+        validateOffersSingle()
     } else if(paymentSchedule == "semiAutomatic"){
 
-        validateSemiauto()
+        validateOffersSemiauto()
     } else if(paymentSchedule == "boletoManual"){
 
-        validateBoletoManual()
+        validateOffersBoletoManual()
     }
 }
 //======================================================================================================
