@@ -559,13 +559,9 @@ function validateOffersAutomatic(){
 
     validateOffer(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
 
-<<<<<<< HEAD
-    validateOffer(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" )
-=======
-    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" );
+    validateOffer(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" );
     
-    reduzirValidador(offerPoints && bonusRescue,"- Pontos do Portal com Resgate não é autorizado. Pontos é valido apenas para alunos NEW" );
->>>>>>> ea0ca43d96a1d20925f04cda9ae38e0e815f635f
+    validateOffer(offerPoints && bonusRescue,"- Pontos do Portal com Resgate não é autorizado. Pontos é valido apenas para alunos NEW" )
 
 
  
@@ -593,13 +589,9 @@ function validateOffersManual(){
 
     validateOffer(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" );
 
-<<<<<<< HEAD
-    validateOffer(offerPoints && bonus1real,"- Pontos do Portal  + 1 real não autorizado" )
-=======
-    reduzirValidador(offerPoints && bonus1real,"- Pontos do Portal  + 1 real não autorizado" );
-  
-    reduzirValidador(offerPoints && bonusRescue,"- Pontos do Portal com Resgate não é autorizado. Pontos é valido apenas para alunos NEW" );
->>>>>>> ea0ca43d96a1d20925f04cda9ae38e0e815f635f
+    validateOffer(offerPoints && bonus1real,"- Pontos do Portal  + 1 real não autorizado" );
+    
+    validateOffer(offerPoints && bonusRescue,"- Pontos do Portal com Resgate não é autorizado. Pontos é valido apenas para alunos NEW" );
 
     validateOffer(offer10da,"- Multa de 10% no manual" );
 }
@@ -622,7 +614,9 @@ function validateOffersSingle(){
     validateOffer(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
 
     validateOffer(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
-
+    
+    validateOffer(offerPoints && bonusRescue,"- Pontos do Portal com Resgate não é autorizado. Pontos é valido apenas para alunos NEW" );
+ 
     validateOffer(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
 }
 
@@ -645,17 +639,12 @@ function validateOffersSemiauto (){
 
     validateOffer(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
 
-<<<<<<< HEAD
     validateOffer(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
-=======
-    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
     
-    reduzirValidador(offerPoints && bonusRescue,"- Pontos do Portal com Resgate não é autorizado. Pontos é valido apenas para alunos NEW" );
-
-    reduzirValidador(offer10da,"- Ofertas de 10% no manual apenas com DA" )
->>>>>>> ea0ca43d96a1d20925f04cda9ae38e0e815f635f
+    validateOffer(offerPoints && bonusRescue,"- Pontos do Portal com Resgate não é autorizado. Pontos é valido apenas para alunos NEW" );
 
     validateOffer(offer10da,"- Ofertas de 10% no manual apenas com DA" )
+
 
 }
 
@@ -678,19 +667,16 @@ function validateOffersBoletoManual(){
 
     offerAproved();
 
-<<<<<<< HEAD
+
     validateOffer(bonusPL && bonusMonths, "- Dobro de Aulas com Meses Bonus, não autorizado");
-=======
-    reduzirValidador(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
-    
-    reduzirValidador(offerPoints && bonusRescue,"- Pontos do Portal com Resgate não é autorizado. Pontos é valido apenas para alunos NEW" );
->>>>>>> ea0ca43d96a1d20925f04cda9ae38e0e815f635f
 
     validateOffer(bonusPL && bonusRescue,"- Dobro de Aulas com Resgate, não autorizado" );
 
     validateOffer(offerPoints &&  offers >= 3, "- Pontos do Portal com mais de uma Oferta");
 
-    validateOffer(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" ); 
+    validateOffer(offerPoints && bonus50,"- Pontos do Portal com mais de 40% de desconto" );
+    
+    validateOffer(offerPoints && bonusRescue,"- Pontos do Portal com Resgate não é autorizado. Pontos é valido apenas para alunos NEW" );
 
     validateOffer(offer10da,"- Ofertas de 10% no manual apenas com DA");
 
